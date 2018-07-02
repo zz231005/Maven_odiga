@@ -4,9 +4,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	
 	<typeAliases>
-		<typeAlias type="com.odiga.dto.member.MemberDTO" alias = "MemberDTO"/>
+		<typeAlias type = "com.odiga.dto.member.MemberDTO" alias = "MemberDTO"/>
+		<typeAlias type = "com.odiga.dto.hotel.HotelDTO" alias = "HotelDTO"/>
+		<typeAlias type = "com.odiga.dto.room.RoomDTO" alias = "RoomDTO"/>
+		<typeAlias type = "com.odiga.dto.comment.CommentDTO" alias = "CommentDTO"/>
+		<typeAlias type = "com.odiga.dto.payment.PaymentDTO" alias = "PaymentDTO"/>
+		<typeAlias type = "com.odiga.dto.cart.CartDTO" alias = "CartDTO"/>
 	</typeAliases>
-	
 </configuration>
