@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.odiga.mybatis.payment.paymentMapper.xml">
+
+	<insert id="insertPayment" parameterType="PaymentDTO">
+		insert into payment values(
+			payment_seq.nextval,
+			#{hotel_num},
+			#{id},
+			#{price},
+			#{startdate},
+			#{enddate},
+			#{pay_mode}
+		)
+	</insert>
+	
+	<select id="getPayment" parameterType="String" resultType="PaymentDTO">
+		select * from payment where id = #{id}
+	</select>
+
+	<select id="before" parameterType="java.util.HashMap" resultType="PaymentDTO">
+		select * from
+		(select rownum rn, A.* from
+		(select * from payment where id=#{id} and sysdate<![CDATA[>=]]>enddate order by startdate) A) 
+		where rn between #{start } and #{end }
+	</select><!-- 수정 -->
+	
+	<select id="schedule" parameterType="java.util.HashMap" resultType="PaymentDTO">
+		select * from 
+		(select rownum rn, A.* from
+		(select * from payment where id=#{id} and  startdate<![CDATA[>]]>sysdate-1 order by startdate)A) 
+		where rn between #{start } and #{end }
+	</select>
+	
+	<select id="before_count" parameterType="String" resultType="int">
+		select count(*) from payment where id=#{id} and sysdate<![CDATA[>=]]>enddate
+	</select>
+	
+	<select id="schedule_count" parameterType="String" resultType="int">
+		select count(*) from payment where id = #{id } and  startdate<![CDATA[>]]>sysdate-1
+	</select>
+
+	<delete id="deletePay" parameterType="java.util.HashMap" >
+		${sql }
+	</delete>
+	
+	<select id="nonmem_getPay" parameterType="java.util.HashMap" resultType="PaymentDTO">
+		${sql }
+	</select>
+	
+	<delete id="deletePayment" parameterType="String">
+		delete from payment where id=#{id}
+	</delete>
+
+	<select id ="nonmem_count" parameterType="java.util.HashMap" resultType="int">
+		${sql }
+	</select>
+</mapper>
