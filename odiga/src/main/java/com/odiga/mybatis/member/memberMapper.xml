@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.odiga.mybatis.member.memberMapper">
+<mapper namespace="com.odiga.mybatis.member.memberMapper.xml">
 	<insert id="insertMember" parameterType="MemberDTO">
 		insert into member values (#{id},#{name},#{passwd},#{email},#{hp1},#{hp2},#{hp3},sysdate, 0)
 	</insert>

@@ -29,7 +29,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.odiga.dto.member.MemberDTO;
 import com.odiga.mybatis.member.MemberMapper;
 
-
 @Controller
 public class IndexController {
 	private static String [] CITY_LIST = {"서울","인천","춘천", "청주", "대전", "안동", "전주", "포항", "대구", "울산", "부산", "창원", "여수", "광주", "제주"};
@@ -184,14 +183,12 @@ public class IndexController {
             int temp_min= (int)(Double.parseDouble(mainArray.get("temp_min").toString()) - 273.15);
             int temp_max= (int)(Double.parseDouble(mainArray.get("temp_max").toString()) - 273.15);
             
-         
            hs.put("city",  city_kr);
            hs.put("weather",obj.get("main"));
            hs.put("temp",temp);
            hs.put("temp_min",temp_min);
            hs.put("temp_max",temp_max);
            hs.put("icon", obj.get("icon"));
-           
            
         }
 		catch(NumberFormatException e){

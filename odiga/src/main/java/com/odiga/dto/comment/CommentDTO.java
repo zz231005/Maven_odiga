@@ -1,6 +1,5 @@
 package com.odiga.dto.comment;
 
-/* ¾È³ç */
 public class CommentDTO {
 	private int num;
 	private int hotel_num;
@@ -10,7 +9,6 @@ public class CommentDTO {
 	private String passwd;
 	private String logtime;
 	private double star_rate ;
-
 
 	public int getNum() {
 		return num;

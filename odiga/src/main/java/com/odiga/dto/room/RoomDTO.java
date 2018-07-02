@@ -1,7 +1,5 @@
 package com.odiga.dto.room;
 
-
-/* ¾È³ç */
 public class RoomDTO {
 	private int num;
 	private int hotel_num;

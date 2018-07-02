@@ -23,7 +23,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.odiga.controller.member.SMTPAuthenticatior;
 import com.odiga.mybatis.login.LoginMapper;
 
-
 @Controller
 public class LoginAnoController {
 	@Autowired

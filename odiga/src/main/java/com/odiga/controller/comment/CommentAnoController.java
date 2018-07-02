@@ -11,21 +11,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.odiga.dto.comment.CommentDTO;
 import com.odiga.mybatis.comment.CommentMapper;
-
-
+import com.odiga.mybatis.hotel.HotelMapper;
 
 @Controller
 public class CommentAnoController {
 	@Autowired
 	private CommentMapper commentMapper;
 	@Autowired
-	/*private HotelMapper hotelMapper;*/
+	private HotelMapper hotelMapper;
 	
-	public CommentAnoController() {
-		System.out.println("ddd");
-		System.out.println(commentMapper);
-		System.out.println(hotelMapper);
-	}
 	
 	@RequestMapping(value = "/commentPage.do")
 	public ModelAndView CommentPage(int hotel_num, int pageNum) {

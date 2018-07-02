@@ -2,7 +2,6 @@ package com.odiga.controller.index;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
@@ -33,7 +32,6 @@ import com.odiga.dto.hotel.HotelDTO;
 import com.odiga.dto.member.MemberDTO;
 import com.odiga.mybatis.hotel.HotelMapper;
 import com.odiga.mybatis.member.MemberMapper;
-
 
 @Controller
 public class InfoController {

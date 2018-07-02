@@ -19,16 +19,15 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.odiga.controller.index.IndexController;
 import com.odiga.dto.hotel.HotelDTO;
 import com.odiga.mybatis.hotel.HotelMapper;
-
-import index.controller.IndexController;
+import com.odiga.mybatis.member.MemberMapper;
 
 @Controller
 public class HotelAnoController {
 	@Autowired
 	private HotelMapper hotelMapper;
-	
 	@Autowired
 	private MemberMapper memberMapper;
 	
@@ -100,7 +99,7 @@ public class HotelAnoController {
 		HashMap<String, String> hm=(HashMap<String, String>) session.getAttribute("user");
 		if(hm != null) {
 			String id=hm.get("id");
-		    int points = memberDAO.getPoint(id);
+		    int points = memberMapper.getPoint(id);
 		   mav.addObject("points", points);
 		}
 	     
@@ -168,7 +167,7 @@ public class HotelAnoController {
 	  public ModelAndView hotelSearch(HttpServletRequest req, String search, int pageNum, HttpServletResponse resp, String start, String end) throws UnsupportedEncodingException {
 		  ModelAndView mav = new ModelAndView("hotel/hotel_search");
 		  List<HotelDTO> hotel_Search_list = hotelMapper.getSearch_list(search, pageNum);
-		  int count = hotelMapper.countSearch(search);
+		  int count = hotelMapper.getCountSearch(search);
 		  int maxPage = count / 9;
 		  if(count % 9 > 0) {
 			  maxPage++;
@@ -185,13 +184,12 @@ public class HotelAnoController {
 	      return mav;
 	  }
 	  
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+/*
 	  @RequestMapping(value = "/hotel_update.do", method = RequestMethod.POST)
 		public ModelAndView hotelUpdatePro(HttpServletRequest req, HotelDTO dto, BindingResult result)
 		throws IOException {
 			setImage(req, dto, result);
 			hotelMapper.updateHotel(dto);
 			return new ModelAndView("redirect:hotel_list.do");
-		}	
+		}	*/
 }

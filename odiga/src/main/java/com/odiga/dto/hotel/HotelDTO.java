@@ -1,9 +1,6 @@
 package com.odiga.dto.hotel;
 
-
-
 public class HotelDTO {
-
 	private int num;
 	private String name;
 	private String roadaddrpart1;
