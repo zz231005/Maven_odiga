@@ -18,8 +18,13 @@
     
     <!-- MyBatis-Spring -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" value="classpath:mybatis-config.xml" />
-        <property name="dataSource" ref="dataSource" />
-    </bean>
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mapperLocations" value="classpath:/com/odiga/mybatis/**/*.xml"/>
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		
+	</bean>
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+      <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+   </bean>	
 
 </beans>
