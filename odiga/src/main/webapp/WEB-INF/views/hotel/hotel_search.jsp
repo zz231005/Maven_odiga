@@ -265,7 +265,7 @@ body {
 	};
 
 </script>
-<%@include file="/WEB-INF/odiga/top.jsp"%>
+<%@include file="/WEB-INF/views/odiga/top.jsp"%>
 <%
 	java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("YYYY-MM-dd");
 	String date = sdf.format(new java.util.Date());
@@ -391,4 +391,4 @@ body {
       </c:forEach>
    </div>
 	<br>
-<%@include file="/WEB-INF/odiga/bottom.jsp"%>
+<%@include file="/WEB-INF/views/odiga/bottom.jsp"%>

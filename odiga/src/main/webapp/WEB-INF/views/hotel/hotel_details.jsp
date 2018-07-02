@@ -244,7 +244,7 @@ $(document).ready(function(){
 });
 
 </script>
-<%@include file="/WEB-INF/odiga/top.jsp"%>
+<%@include file="/WEB-INF/views/odiga/top.jsp"%>
 	<div align = "center" id="Menu" class = "jbMenu display-topmiddle">
  		<form name = "f_search" action="hotel_search.do" method="post" style="margin: 0; ">
 	        <input type = "text" name = "search" class = "w3-input" style="display: table-cell; width: 300px;" placeholder="도시,지역,숙소명">
@@ -547,4 +547,4 @@ $(document).ready(function(){
 </div>
 
 
-<%@include file="/WEB-INF/odiga/bottom.jsp"%>
+<%@include file="/WEB-INF/views/odiga/bottom.jsp"%>
