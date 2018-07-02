@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	
 	<typeAliases>
-		<typeAlias type="com.odiga.dto.board.BoardDTO" alias="BoardDTO"/>
+		<typeAlias type="com.odiga.dto.member.MemberDTO" alias = "MemberDTO"/>
 	</typeAliases>
 	
 </configuration>

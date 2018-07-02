@@ -3,7 +3,7 @@
 <html>
 <head>
 	<script type="text/javascript">
-		location.href = "home.do";
+		location.href = "index.do";
 	</script>
 </head>
 <body>
