@@ -77,7 +77,7 @@ body{
 </style>
 <script>
    var click = true;
-   var list_size = '${hotel_list.size() - 5}';
+   var list_size = '${hotel_list.size() - 6}';
    var size = 33-(list_size*210);
    
    $(document).ready(function(){

@@ -193,7 +193,7 @@ function myInformation() {
       <div class = "header">
          <div style="float: left;">
             <a href="index.do" class="line_text_log">
-               <img src="img/odiga.png" style="margin: 7px 10px 0 0; height: 30px; width: 90px;">
+               <img src="img/odiga_log.png" style="margin: 7px 10px 0 0; height: 30px; width: 90px;">
             </a>
             <span class="line_log"></span>
        		<div class="line_text" style="margin-left: 2px; margin-top: -2px;">

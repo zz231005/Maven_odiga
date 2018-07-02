@@ -154,7 +154,7 @@ public class IndexController {
 			break;
 		}
 		
-		HashMap<String, Object> hs = new HashMap<>();
+		HashMap<String, Object> hs = new HashMap<String, Object>();
 		try{
           String urlstr = "http://api.openweathermap.org/data/2.5/weather?q="+city+",kr"
             		+"&appid=68935ac7bbc508b481d8f48209ebdca5";
