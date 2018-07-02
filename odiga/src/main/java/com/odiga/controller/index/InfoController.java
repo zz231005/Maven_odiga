@@ -29,7 +29,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.odiga.controller.member.SMTPAuthenticatior;
+import com.odiga.dto.hotel.HotelDTO;
 import com.odiga.dto.member.MemberDTO;
+import com.odiga.mybatis.hotel.HotelMapper;
 import com.odiga.mybatis.member.MemberMapper;
 
 

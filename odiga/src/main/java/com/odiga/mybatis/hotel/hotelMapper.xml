@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hotel.mybatis.hotelMapper">
+
+	<select id="listHotel" resultType="HotelDTO">
+		select * from
+		hotel_list order
+		by num desc
+	</select>
+
+	<select id="getHotel" resultType="HotelDTO" parameterType="int">
+		select * from hotel_list where num = #{num}
+	</select>
+	
+	<insert id="insertHotel" parameterType="HotelDTO" useGeneratedKeys="true" keyColumn="num"   keyProperty="num">
+		insert into hotel_list values(
+			hotel_list_seq.nextval,
+			#{name},
+			#{roadaddrpart1},
+			#{addrdetail},
+			#{zipno},
+			#{price},
+			#{filename},
+			#{parking},
+			#{refund},
+			#{checkin},
+			#{checkout},
+			#{content },
+			0,
+			0
+		)
+
+	</insert>
+
+	<update id="updateHotel" parameterType="HotelDTO">
+		update hotel_list set
+			name = #{name},
+			roadaddrpart1 = #{roadaddrpart1},
+			addrdetail = #{addrdetail},
+			zipno = #{zipno},
+			price = #{price},
+			filename = #{filename},
+			breakfast = #{breakfast},
+			content = #{content},
+			wifi = #{wifi},
+			smoking = #{smoking},
+			refund = #{refund},
+			parking = #{parking},
+			checkin=#{checkin},
+			checkout= #{checkout}
+			where num = #{num}
+	</update>
+
+	<delete id="deleteHotel" parameterType="int">
+		delete from hotel_list where num = #{num}
+	</delete>
+
+	<select id="findHotel_list" resultType="HotelDTO" parameterType="String">
+		select * from hotel_list where name like
+		'%'||#{title }||'%' order by num
+		desc
+	</select>
+	
+	<update id = "hotel_Score_Popul" parameterType = "java.util.HashMap">
+		${sql }
+	</update>
+	
+	<select id="cateHotel" resultType="HotelDTO" parameterType="String">
+		select * from hotel_list where roadaddrpart1 like
+		'%'||#{title }||'%' order by num
+		desc
+	</select>
+	
+	<select id="getCheck" parameterType="java.util.List" resultType="HotelDTO">
+   		select * from hotel_list where num IN
+   		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+   		#{item.hotel_num}
+   		</foreach>
+   </select>
+   
+   <insert id="inputCart" parameterType="java.util.HashMap" >
+   		${sql}
+   </insert>
+   
+   <select id="viewCart" parameterType="java.util.HashMap" resultType="CartDTO">
+   		${sql}
+   </select>
+   
+   <select id="countCart" parameterType="String" resultType="int">
+   		select count(*) from hotel_cart where id=#{id}
+   </select>
+   
+   <delete id="deleteCart" parameterType="java.util.HashMap">
+   		${sql }
+   </delete>
+   
+   <select id="getCountSearch" parameterType="String" resultType="int">
+		select count(*) from hotel_list where roadaddrpart1 like
+		'%'||#{search }||'%' or name like '%'||#{search }||'%' order by num
+	</select>
+	
+	<select id="getSearch_list" parameterType="java.util.HashMap" resultType="HotelDTO">
+		${sql }
+	</select>
+	
+	<select id="checkNum" parameterType="java.util.HashMap" resultType="int">
+        ${sql }
+   </select>
+	
+</mapper>
