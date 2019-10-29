@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-   pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script type="text/javascript">
 </script>
 <html>
 <head>
-<title>Odiga - ´ç½ÅÀÌ ¿øÇÏ´Â °÷ ¾îµğµçÁö</title>
+<title>Odiga - ë‹¹ì‹ ì´ ì›í•˜ëŠ” ê³³ ì–´ë””ë“ ì§€</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -60,7 +60,7 @@
 }
 
 .top_font{
-   font-family: ³ª´®°íµñ;
+   font-family: ë‚˜ëˆ”ê³ ë”•;
    font-weight: bold;
    font-size : 15px;
 }
@@ -171,9 +171,9 @@ function is_city(city){
 		},
 		success:function(data) {
 			 $('#icon').attr('src','http://openweathermap.org/img/w/'+data.icon+'.png');
-			document.getElementById("weather_temp").innerHTML = data.temp+"¡É";
-			document.getElementById("weather_temp_min").innerHTML = data.temp_min+"¨¬";
-			document.getElementById("weather_temp_max").innerHTML = data.temp_max+"¨¬";
+			document.getElementById("weather_temp").innerHTML = data.temp+"â„ƒ";
+			document.getElementById("weather_temp_min").innerHTML = data.temp_min+"Âº";
+			document.getElementById("weather_temp_max").innerHTML = data.temp_max+"Âº";
 			$('.weather_dropdown-content').removeClass('w3-show');
 	    }
 	});
@@ -201,7 +201,7 @@ function myInformation() {
        				<tr>
        					<td>
        						<div class="w3-dropdown-click">
-	       						<label onclick="is_Weather()" style="cursor: pointer; font-family: ³ª´®°íµñ; font-weight: bold; padding-top: 10px;" id = "city">${city }</label>
+	       						<label onclick="is_Weather()" style="cursor: pointer; font-family: ë‚˜ëˆ”ê³ ë”•; font-weight: bold; padding-top: 10px;" id = "city">${city }</label>
 	       						<div id="Weather" class="weather_dropdown-content w3-bar-block" style="border: 1px solid #ccc;">
 	       							<c:forEach var="city_name" items="${city_list }">
 	       								<label class = "weather_city" onclick="is_city(this.innerHTML)">${city_name }</label>
@@ -213,11 +213,11 @@ function myInformation() {
        						<img id = "icon" src='http://openweathermap.org/img/w/${icon }.png'>
        					</td>
        					<td>
-       						<font id = "weather_temp" style="font-size: 16px; font-weight: bold; font-family: ³ª´®°íµñ-B;">
-		      					${temp}¡É
+       						<font id = "weather_temp" style="font-size: 16px; font-weight: bold; font-family: ë‚˜ëˆ”ê³ ë”•-B;">
+		      					${temp}â„ƒ
 		      				</font>
        						<div class = "weather_font">
-				      			<font id = "weather_temp_min" color="blue">${temp_min}¨¬</font> / <font id = "weather_temp_max" color = "red">${temp_max}¨¬</font>
+				      			<font id = "weather_temp_min" color="blue">${temp_min}Âº</font> / <font id = "weather_temp_max" color = "red">${temp_max}Âº</font>
 				     		</div>
        					</td>
        				</tr>
@@ -226,29 +226,29 @@ function myInformation() {
          </div>
         <c:if test = "${empty sessionScope.user}">
 			<div style="float: right;">
-				<label class = "line_text" style="cursor: pointer;" onclick="document.getElementById('login').style.display='block'">·Î±×ÀÎ</label>
+				<label class = "line_text" style="cursor: pointer;" onclick="document.getElementById('login').style.display='block'">ë¡œê·¸ì¸</label>
 				<span class="line"></span>
-				<label class = "line_text" style="cursor: pointer;" onclick="document.getElementById('join').style.display='block'">È¸¿ø°¡ÀÔ</label>
+				<label class = "line_text" style="cursor: pointer;" onclick="document.getElementById('join').style.display='block'">íšŒì›ê°€ì…</label>
 				<span class="line"></span>
-				<label class = "line_text" style="cursor: pointer;" onclick="location.href = 'info_nonMember.do'">ºñÈ¸¿ø ¿¹¾àÁ¤º¸</label>
+				<label class = "line_text" style="cursor: pointer;" onclick="location.href = 'info_nonMember.do'">ë¹„íšŒì› ì˜ˆì•½ì •ë³´</label>
 			</div>
          </c:if>
          <c:if test = "${!empty sessionScope.user }">
          	<div style="float: right; padding-top: 13px;">
          		<div onclick="myInformation()" style="  cursor: pointer;">
          			<span style="padding: 15px; border: none; margin: 0; font-size: 15px;">
-         				<font style="color:gray;" id = "top_name">${sessionScope.user.user_name }</font>´Ô È¯¿µÇÕ´Ï´Ù
+         				<font style="color:gray;" id = "top_name">${sessionScope.user.user_name }</font>ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤
          			</span>
          		</div>
 				<div id="information" class="w3-dropdown-content w3-bar-block w3-border" style="top:63px; border-radius: 5px;width: 172px; " onclick="myInformation()">
 					<label class="w3-bar-item" style="font-weight: lighter;">[${points}]point</label> 
-					<a href="info_member.do" class="w3-bar-item w3-button">È¸¿øÁ¤º¸</a> 
-					<a href="info_schedule.do" class="w3-bar-item w3-button">¿¹¾à °ü¸®</a> 
-					<a href="info_cart.do" class="w3-bar-item w3-button">Âò¸ñ·Ï</a> 
-					<c:if test = "${sessionScope.user.admin == '°ü¸®ÀÚ' && sessionScope.user.id == 'admin'}">
-						<a href = "hotel_insert.do" class = "w3-bar-item w3-button">È£ÅÚÃß°¡</a>
+					<a href="info_member.do" class="w3-bar-item w3-button">íšŒì›ì •ë³´</a> 
+					<a href="info_schedule.do" class="w3-bar-item w3-button">ì˜ˆì•½ ê´€ë¦¬</a> 
+					<a href="info_cart.do" class="w3-bar-item w3-button">ì°œëª©ë¡</a> 
+					<c:if test = "${sessionScope.user.admin == 'ê´€ë¦¬ì' && sessionScope.user.id == 'admin'}">
+						<a href = "hotel_insert.do" class = "w3-bar-item w3-button">í˜¸í…”ì¶”ê°€</a>
 					</c:if>
-					<a href="logout.do" class="w3-bar-item w3-button">·Î±×¾Æ¿ô</a>
+					<a href="logout.do" class="w3-bar-item w3-button">ë¡œê·¸ì•„ì›ƒ</a>
 				</div>
 			</div>
          </c:if>
@@ -288,7 +288,7 @@ function myInformation() {
 		</div>
 		
 		<!-- Id Find -->
-			<div id="id_pwd_find"  style="top:0; left :0; display: none; z-index: 3; height: 100%; width: 100%; position: fixed;" >
+		<div id="id_pwd_find"  style="top:0; left :0; display: none; z-index: 3; height: 100%; width: 100%; position: fixed;" >
 			<div style="top: 0; left: 0;right: 0;bottom: 0;position: fixed; background-color: rgba(0,0,0,.5); z-index: 3;"></div>
 			<div style="display: table; width: 100%;height: 100%;">
 				<div style="display:table-cell; vertical-align: middle;">

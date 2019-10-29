@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<title>Odiga ¿¹¾à°ü¸® ÀÔ´Ï´Ù.</title>
+<title>Odiga ì˜ˆì•½ê´€ë¦¬ ìž…ë‹ˆë‹¤.</title>
 </head>
 <style>
 #side{
@@ -93,25 +93,25 @@ function bookingCheck(evt, checked) {
 			<li class="info_li">
 				<a href="info_member.do" style="cursor: pointer;">
 					<i class="glyphicon glyphicon-user w3-large" style="padding-right: 20px;"></i>
-					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >È¸¿øÁ¤º¸</font>
+					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >íšŒì›ì •ë³´</font>
 				</a>
 			</li>
 			<li class="info_li">
 				<a style="cursor: pointer;">
 					<i class="fa fa-bars w3-large" style="padding-right: 20px;"></i>
-					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >¿¹¾à °ü¸®</font>
+					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >ì˜ˆì•½ ê´€ë¦¬</font>
 				</a>
 			</li>
 			<li class="info_li">
 				<a href="info_cart.do" style="cursor: pointer;">
 					<i class="fa fa-truck w3-large" style="padding-right: 20px;"></i>
-					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >Âò¸ñ·Ï</font>
+					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >ì°œëª©ë¡</font>
 				</a>
 			</li>
 			<li class="info_li">
 				<a href="info_delete.do" style="cursor: pointer;">
 					<i class="fa fa-search w3-large" style="padding-right: 20px;"></i>
-					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >È¸¿ø Å»Åð</font>
+					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >íšŒì› íƒˆí‡´</font>
 				</a>
 			</li>
 		</ul>
@@ -121,12 +121,12 @@ function bookingCheck(evt, checked) {
 		<div class="w3-row">
 			<div onclick="bookingCheck(event, 'Schedule');" style="cursor: pointer;">
 				<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-blue">
-					<label style="cursor: pointer;">Åõ¼÷ ¿¹Á¤ÀÎ ¿¹¾à</label>
+					<label style="cursor: pointer;">íˆ¬ìˆ™ ì˜ˆì •ì¸ ì˜ˆì•½</label>
 				</div>
 		   </div>
 			<div onclick="bookingCheck(event, 'Complete');" style="cursor: pointer;">
 				<div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">
-				 	<label style="cursor: pointer;">Åõ¼÷ ¿Ï·áµÈ ¿¹¾à</label>
+				 	<label style="cursor: pointer;">íˆ¬ìˆ™ ì™„ë£Œëœ ì˜ˆì•½</label>
 				</div>
 			</div>
 		</div>

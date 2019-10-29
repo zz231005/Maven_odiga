@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -92,7 +92,7 @@ body{
       });
    
       $("#right").bind('click',function(){
-         if($(".hotel_list").offset().left > size && click){ /* (Àå¼ö/2) È¦¼ö(¹Ý¿Ã¸²) = x    |     33 - (x*210)*/
+         if($(".hotel_list").offset().left > size && click){ /* (ìž¥ìˆ˜/2) í™€ìˆ˜(ë°˜ì˜¬ë¦¼) = x    |     33 - (x*210)*/
             click = false;
             $(".hotel_list").animate({"left": "-=221px"}, "fast"); 
             setTimeout(function() {
@@ -105,7 +105,7 @@ body{
 </script>
 </head>
 <body>
-   <div class = "hotel_list" style="left: 48px; width: 683px;"> <!-- left·Î ÁÂ¿ì °£°Ý ¸ÂÃß±â -->
+   <div class = "hotel_list" style="left: 48px; width: 683px;"> <!-- leftë¡œ ì¢Œìš° ê°„ê²© ë§žì¶”ê¸° -->
       <c:forEach var = "dto" items="${hotel_list }">
          <div class = "gallery_pointer">
             <div class="gallery" onclick="parent.location.href = 'hotel_getOne.do?num=${dto.num}'">
@@ -131,7 +131,7 @@ body{
             </div>
                <div class="price">
                 	<hr size="3" style="margin-bottom: 10px;">
-                    <font size="4px" color="Red" style="font-weight: bold;">£Ü 
+                    <font size="4px" color="Red" style="font-weight: bold;">ï¿¦ 
                      <fmt:formatNumber value="${dto.price }" groupingUsed="true" /></font>
                </div>
             </div>

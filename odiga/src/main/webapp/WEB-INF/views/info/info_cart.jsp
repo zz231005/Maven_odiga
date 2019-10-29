@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>³» Âò¸ñ·Ï</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ë‚´ ì°œëª©ë¡</title>
 <style>
 #side{
 width:25%;
@@ -55,25 +55,25 @@ width:75%;
 		<li class="info_li">
 			<a href="info_member.do" style="cursor: pointer;">
 				<i class="glyphicon glyphicon-user w3-large" style="padding-right: 20px;"></i>
-				<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >È¸¿øÁ¤º¸</font>
+				<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >íšŒì›ì •ë³´</font>
 			</a>
 		</li>
 		<li class="info_li">
 			<a href="info_schedule.do" style="cursor: pointer;">
 				<i class="fa fa-bars w3-large" style="padding-right: 20px;"></i>
-				<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >¿¹¾à °ü¸®</font>
+				<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >ì˜ˆì•½ ê´€ë¦¬</font>
 			</a>
 		</li>
 		<li class="info_li">
 			<a style="cursor: pointer;">
 				<i class="fa fa-truck w3-large" style="padding-right: 20px;"></i>
-				<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >Âò¸ñ·Ï</font>
+				<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >ì°œëª©ë¡</font>
 			</a>
 		</li>
 		<li class="info_li">
 				<a href="info_delete.do" style="cursor: pointer;">
 					<i class="fa fa-search w3-large" style="padding-right: 20px;"></i>
-					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >È¸¿ø Å»Åð</font>
+					<font style="font-size: 18px; font-weight: bold; cursor: pointer;" >íšŒì› íƒˆí‡´</font>
 				</a>
 			</li>
 	</ul>

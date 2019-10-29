@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <script type="text/javascript">
@@ -10,12 +10,12 @@ var password = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[`~!@#$%^&*+=-?/,.<>{}:;]).{6,15}
 var id_value = /^(?=.*[a-zA-Z])(?=.*[0-9])/;
 var input_email_check;
 var hp_text= /^[0-9]+$/;
-var nameText= /^[°¡-Èş]{2,10}$/;
+var nameText= /^[ê°€-í]{2,10}$/;
 
 $(document).ready(function(){
 	 $('#send_email').on('click', function(){
  		if(!f_join.email1.value || !f_join.email2.value){
- 			document.getElementById("email_text").innerHTML = "ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä.";
+ 			document.getElementById("email_text").innerHTML = "ì´ë©”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”.";
 			$('.join_email_font').addClass('font_red');
 			$('.email_gong').css("padding-top","5px");
  			f_join.email1.focus()
@@ -31,14 +31,14 @@ $(document).ready(function(){
  				 success: function(data){
  					 if(data == 1){
  						$('.panel').removeClass('panel_hei');
- 						document.getElementById("email_text").innerHTML = "Áßº¹µÈ ÀÌ¸ŞÀÏÀÔ´Ï´Ù.";
+ 						document.getElementById("email_text").innerHTML = "ì¤‘ë³µëœ ì´ë©”ì¼ì…ë‹ˆë‹¤.";
  						$('.join_email_font').addClass('font_red');
  						$('.email_gong').css("padding-top","5px");
  			 			f_join.email1.focus()
 						return
  					 }else{
  						$('.panel').addClass('panel_hei');
-						alert("ÀÔ·ÂÇÏ½Å E-mail·Î ÀÎÁõ¹øÈ£¸¦ Àü¼ÛÇÏ¿´½À´Ï´Ù.")
+						alert("ì…ë ¥í•˜ì‹  E-mailë¡œ ì¸ì¦ë²ˆí˜¸ë¥¼ ì „ì†¡í•˜ì˜€ìŠµë‹ˆë‹¤.")
 						input_email_check = data;
  					 }
  				}
@@ -56,18 +56,18 @@ $(document).ready(function(){
              },
              success:function(data){
              	if(f_join.id.value== null){
-         			document.getElementById("join_id_text").innerHTML = "¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.";
+         			document.getElementById("join_id_text").innerHTML = "ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”.";
          			$('.join_id_font').addClass('font_red');
          			f_join.id.focus()
          		}else if(f_join.id.value.length < 6 || !id_value.test(f_join.id.value)){
-         			document.getElementById("join_id_text").innerHTML = "¿µ¹®, ¼ıÀÚ¸¦ Æ÷ÇÔÇÑ 6ÀÚ ÀÌ»ó ÀÔ·ÂÇÏ½Ê½Ã¿À.";
+         			document.getElementById("join_id_text").innerHTML = "ì˜ë¬¸, ìˆ«ìë¥¼ í¬í•¨í•œ 6ì ì´ìƒ ì…ë ¥í•˜ì‹­ì‹œì˜¤.";
          			$('.join_id_font').addClass('font_red');
          			f_join.id.focus()
          		}else if(data  > 0){
-         			document.getElementById("join_id_text").innerHTML = "Áßº¹µÈ ¾ÆÀÌµğÀÔ´Ï´Ù.";
+         			document.getElementById("join_id_text").innerHTML = "ì¤‘ë³µëœ ì•„ì´ë””ì…ë‹ˆë‹¤.";
                      $('.join_id_font').addClass('font_red');
                  }else{
-                 	document.getElementById("join_id_text").innerHTML = "»ç¿ë °¡´ÉÇÑ ¾ÆÀÌµğÀÔ´Ï´Ù.";
+                 	document.getElementById("join_id_text").innerHTML = "ì‚¬ìš© ê°€ëŠ¥í•œ ì•„ì´ë””ì…ë‹ˆë‹¤.";
                  	idcheck = "idCheck";
                  	$('.join_id_font').removeClass('font_red');
                      $('.join_id_font').addClass('font_green');
@@ -80,36 +80,36 @@ $(document).ready(function(){
 
 function Check(){
 	if(!f_join.name.value){
-		 document.getElementById("name_text").innerHTML = "ÀÌ¸§À» ÀÔ·ÂÀ» ÇÏ½Ê½Ã¿À.";
+		 document.getElementById("name_text").innerHTML = "ì´ë¦„ì„ ì…ë ¥ì„ í•˜ì‹­ì‹œì˜¤.";
 		$('.join_name_font').addClass('font_red');
 		$("#name_gong").css("padding-top","5")
 		f_join.name.focus();
 		return;
 	}else if(!nameText.test(f_join.name.value)){
-		document.getElementById("name_text").innerHTML = "ÀÌ¸§À» ÀÔ·Â ÇÏ½Ê½Ã¿À.";
+		document.getElementById("name_text").innerHTML = "ì´ë¦„ì„ ì…ë ¥ í•˜ì‹­ì‹œì˜¤.";
 		$('.join_name_font').addClass('font_red');
 		$("#name_gong").css("padding-top","5")
 		f_join.name.focus();
 		return;
 	}else if(!f_join.id.value){
-		document.getElementById("join_id_text").innerHTML = "¾ÆÀÌµğ¸¦ ÀÔ·ÂÀ» ÇÏ½Ê½Ã¿À.";
+		document.getElementById("join_id_text").innerHTML = "ì•„ì´ë””ë¥¼ ì…ë ¥ì„ í•˜ì‹­ì‹œì˜¤.";
 		$('.join_id_font').addClass('font_red');
 		$('.join_gong').addClass('join_text_gong');
 		f_join.id.focus();
 		return;
 	}else if(!f_join.passwd.value){
-		document.getElementById("join_passwd_text").innerHTML = "ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÀ» ÇÏ½Ê½Ã¿À.";
+		document.getElementById("join_passwd_text").innerHTML = "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥ì„ í•˜ì‹­ì‹œì˜¤.";
 		$('.join_passwd_font').removeClass('font_green');
 		$('.join_passwd_font').addClass('font_red');
 		f_join.passwd.focus();
 		return;
-		document.getElementById("join_passwd_text").innerHTML = "ºñ¹Ğ¹øÈ£¸¦ ¸Â°Ô ÀÔ·ÂÀ» ÇÏ½Ê½Ã¿À.";
+		document.getElementById("join_passwd_text").innerHTML = "ë¹„ë°€ë²ˆí˜¸ë¥¼ ë§ê²Œ ì…ë ¥ì„ í•˜ì‹­ì‹œì˜¤.";
 		$('.join_passwd_font').removeClass('font_green');
 		$('.join_passwd_font').addClass('font_red');
 		f_join.passwd.focus();
 		return;
 	}else if(!f_join.hp2.value || !f_join.hp3.value){
-		document.getElementById("tel_text").innerHTML = "ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÀ» ÇÏ½Ê½Ã¿À.";
+		document.getElementById("tel_text").innerHTML = "ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥ì„ í•˜ì‹­ì‹œì˜¤.";
 		$('.join_tel_font').addClass('font_red');
 		$("#tel_gong").css("padding-top","5")
 		if(!f_join.hp2.value){
@@ -119,19 +119,19 @@ function Check(){
 		}
 		return;
 	}else if(!hp_text.test(f_join.hp2.value) || !hp_text.test(f_join.hp3.value)){
-			document.getElementById("tel_text").innerHTML = "¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.";
+			document.getElementById("tel_text").innerHTML = "ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”.";
 			$('.join_tel_font').addClass('font_red');
 			$("#tel_gong").css("padding-top","5")
 				f_join.hp2.focus();
 			return;
 	}else if(idcheck=="idUncheck"){
-		document.getElementById("join_id_text").innerHTML = "Áßº¹Ã¼Å©¸¦ ÇÏ½Ê½Ã¿À.";
+		document.getElementById("join_id_text").innerHTML = "ì¤‘ë³µì²´í¬ë¥¼ í•˜ì‹­ì‹œì˜¤.";
 		$('.join_id_font').addClass('font_red');
 		$('.join_gong').addClass('join_text_gong');
 		f_join.id.focus();
 		return;
 	}else if(emailcheck=="emailUncheck"){
-		document.getElementById("email_text").innerHTML = "ÀÌ¸ŞÀÏ ÀÎÁõÀ» ÇÏ½Ê½Ã¿À.";
+		document.getElementById("email_text").innerHTML = "ì´ë©”ì¼ ì¸ì¦ì„ í•˜ì‹­ì‹œì˜¤.";
 		$('.join_email_font').addClass('font_red');
 		$('.email_gong').css("padding-top","5px");
 		emailcheck = "emailUncheck";
@@ -188,11 +188,11 @@ function inputTel() {
 function email_check() {
 	if (input_email_check == $('#in_email').val()) {
 		emailcheck = "emailcheck";
-		document.getElementById("email_text").innerHTML = "ÀÎÁõ¹øÈ£°¡ ÀÏÄ¡ÇÕ´Ï´Ù.";
+		document.getElementById("email_text").innerHTML = "ì¸ì¦ë²ˆí˜¸ê°€ ì¼ì¹˜í•©ë‹ˆë‹¤.";
 		$('.join_email_font').removeClass('font_red');
 		$('.join_email_font').addClass('font_green');
 	} else {
-		document.getElementById("email_text").innerHTML = "ÀÎÁõ¹øÈ£°¡ Æ²·È½À´Ï´Ù.";
+		document.getElementById("email_text").innerHTML = "ì¸ì¦ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.";
 		emailcheck = "emailUncheck";
 		$('.join_email_font').removeClass('font_green');
 		$('.join_email_font').addClass('font_red');
@@ -203,13 +203,13 @@ function email_check() {
 
 function pwdCheck() {
 	if (password.test(f_join.passwd.value)) {
-		document.getElementById("join_passwd_text").innerHTML = "»ç¿ë °¡´ÉÇÑ ºñ¹Ğ¹øÈ£ÀÔ´Ï´Ù.";
+		document.getElementById("join_passwd_text").innerHTML = "ì‚¬ìš© ê°€ëŠ¥í•œ ë¹„ë°€ë²ˆí˜¸ì…ë‹ˆë‹¤.";
 		$('.join_passwd_font').removeClass('font_red');
 		$('.join_passwd_font').addClass('font_green');
 		passwdcheck = "passwdcheck";
 		return;
 	} else if (!password.test(f_join.passwd.value)) {
-		document.getElementById("join_passwd_text").innerHTML = "¿µ¹®, ¼ıÀÚ, Æ¯¼ö±âÈ£¸¦ »ç¿ëÇÑ 6~15ÀÚ±îÁö ¸¸µå½Ç ¼ö ÀÖ½À´Ï´Ù.";
+		document.getElementById("join_passwd_text").innerHTML = "ì˜ë¬¸, ìˆ«ì, íŠ¹ìˆ˜ê¸°í˜¸ë¥¼ ì‚¬ìš©í•œ 6~15ìê¹Œì§€ ë§Œë“œì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.";
 		$('.join_passwd_font').removeClass('font_green');
 		$('.join_passwd_font').addClass('font_red');
 		passwdcheck = "passwdUncheck";
@@ -219,13 +219,13 @@ function pwdCheck() {
 </script>
 
 <div class="w3-container w3-green" style="padding-top: 25px; padding-bottom: 5px; border-radius: 5px;" align="right">
-	<h2 style="margin-bottom: 0;">È¸¿ø°¡ÀÔ</h2>
+	<h2 style="margin-bottom: 0;">íšŒì›ê°€ì…</h2>
 </div>
 <div style="padding: 0;" align="left">
 	<form name="f_join" class="w3-container" method="POST" action="member_input.do">
 		<p>
 			<div>
-				<label style="padding-top: 10px;">ÀÌ¸§</label><br><!-- ÀÌ¸§ ÀÔ·Â -->
+				<label style="padding-top: 10px;">ì´ë¦„</label><br><!-- ì´ë¦„ ì…ë ¥ -->
 				<input class="w3-input" style="outline: none;" type="text" name="name" onkeyup="nameputId()" onkeypress="limitName()"
 				maxlength="20">
 			</div>
@@ -236,9 +236,9 @@ function pwdCheck() {
 		<p>	
 		
 			<div>
-				<label>¾ÆÀÌµğ</label><br>  <!-- ¾ÆÀÌµğ ÀÔ·Â -->
+				<label>ì•„ì´ë””</label><br>  <!-- ì•„ì´ë”” ì…ë ¥ -->
 				<input class="w3-input" style="width: 79%; outline: none; display: table-cell;" type="text" name="id" id = "id" onkeyup="inputId()" maxlength="20" >
-				<input class="w3-input" style="width: 20%; display: table-cell; cursor: pointer; border-radius: 4px;" type="button" value="idÁßº¹È®ÀÎ" id = "idcheck_bt">
+				<input class="w3-input" style="width: 20%; display: table-cell; cursor: pointer; border-radius: 4px;" type="button" value="idì¤‘ë³µí™•ì¸" id = "idcheck_bt">
 			</div>
 			<div class = "join_gong">
 				<font  id = "join_id_text" class="join_id_font" ></font>
@@ -247,17 +247,17 @@ function pwdCheck() {
 		<p>
 		
 			<div>
-				<label>ºñ¹Ğ¹øÈ£</label>   <!-- ºñ¹Ğ¹øÈ£ ÀÔ·Â -->
+				<label>ë¹„ë°€ë²ˆí˜¸</label>   <!-- ë¹„ë°€ë²ˆí˜¸ ì…ë ¥ -->
 				<input class="w3-input" type="password" name="passwd" style="outline: none;"  maxlength="15" onkeyup="pwdCheck()" >
 			</div>
 			<div  style="padding-top: 5px;">
-				<font id = "join_passwd_text" class = "join_passwd_font">¿µ¹®, ¼ıÀÚ, Æ¯¼ö±âÈ£¸¦ »ç¿ëÇÑ 6~15ÀÚ±îÁö ¸¸µå½Ç ¼ö ÀÖ½À´Ï´Ù.</font>
+				<font id = "join_passwd_text" class = "join_passwd_font">ì˜ë¬¸, ìˆ«ì, íŠ¹ìˆ˜ê¸°í˜¸ë¥¼ ì‚¬ìš©í•œ 6~15ìê¹Œì§€ ë§Œë“œì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.</font>
 			</div>
 			
 		<p>
 		
 			<div>
-				<label>¿¬¶ôÃ³</label><br>  <!-- ÀüÈ­¹øÈ£ ÀÔ·Â -->
+				<label>ì—°ë½ì²˜</label><br>  <!-- ì „í™”ë²ˆí˜¸ ì…ë ¥ -->
 				<select class="w3-input" style="width: 30%; display: table-cell; outline: none; height: 49px;" name="hp1">
 					<option value="010">010</option>
 					<option value="011">011</option>
@@ -274,30 +274,30 @@ function pwdCheck() {
 			</div>
 		<p>
 			<div>
-				<label>Email</label><br>  <!-- ÀÌ¸ŞÀÏ ÀÔ·Â -->
+				<label>Email</label><br>  <!-- ì´ë©”ì¼ ì…ë ¥ -->
 				<input class="w3-input" style="width: 33%; display: table-cell; outline: none;" type="text" id = "email1"name="email1" onkeyup="inputEmail()">
 				<font style="font-family: inherit; font-size: 17px;">@</font>
 				<input class="w3-input" style="width: 20%; display: table-cell; outline: none;" type="text" id="email2" name="email2" readOnly>
 				<select style="width: 20%; display: table-cell; outline: none; height: 49px" class="w3-input" name="email3" onChange="email_Check()" >
-					<option value="">¼±ÅÃÇÏ¼¼¿ä</option>
+					<option value="">ì„ íƒí•˜ì„¸ìš”</option>
 					<option value="naver.com">naver.com</option>
 					<option value="hanmail.net">hanmail.net</option>
 					<option value="nate.com">nate.com</option>
 					<option value="gmail.com">gmail.com</option>
-					<option value="0">Á÷Á¢ÀÔ·Â</option>
+					<option value="0">ì§ì ‘ì…ë ¥</option>
 				</select>
-				<input id = "send_email" class="w3-input" style="width: 20%; display: table-cell; border-radius: 4px;" type="button" value="Àü¼ÛÇÏ±â">
+				<input id = "send_email" class="w3-input" style="width: 20%; display: table-cell; border-radius: 4px;" type="button" value="ì „ì†¡í•˜ê¸°">
 				
 				
 				<div id = "email_input" class="panel">
 					<input id = "in_email" type = "text" class = "w3-input" style="width: 79%; display: table-cell; outline: none;">
-					<input class = "w3-input" style="width: 20%;display: table-cell;cursor: pointer; border-radius: 4px;" type= "button" value = "ÀÌ¸ŞÀÏ ÀÎÁõ" onclick="email_check()">
+					<input class = "w3-input" style="width: 20%;display: table-cell;cursor: pointer; border-radius: 4px;" type= "button" value = "ì´ë©”ì¼ ì¸ì¦" onclick="email_check()">
 				</div>
 				<div class = "email_gong">
 					<font  id = "email_text" class = "join_email_font" ></font>
 				</div>
 			</div>
 		<p>
-		 	<input class="w3-input" style="cursor: pointer; border-radius: 4px;" type="button" value="°¡ÀÔÇÏ±â" onclick="Check()">
+		 	<input class="w3-input" style="cursor: pointer; border-radius: 4px;" type="button" value="ê°€ì…í•˜ê¸°" onclick="Check()">
 	</form>
 </div>

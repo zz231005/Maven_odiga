@@ -28,10 +28,10 @@ public class RoomAnoController {
 	@RequestMapping(value = "/insert_Room.do", method = RequestMethod.POST)
 	public ModelAndView insertRoom(HttpServletRequest req, int hotel_num, RoomDTO dto,BindingResult result) throws UnsupportedEncodingException {
 		if (result.hasErrors()) {
-			System.err.println("¿¡·¯");
+			System.err.println("ì—ëŸ¬");
 		}
 		
-		//È£ÅÚÀÇ ¹æ Á¤º¸ Ãß°¡¸¦ 5°³ ±îÁö ÇÒ ¼ö ÀÖÀ½ 
+		//í˜¸í…”ì˜ ë°© ì •ë³´ ì¶”ê°€ë¥¼ 5ê°œ ê¹Œì§€ í•  ìˆ˜ ìˆìŒ 
 		for(int i = 1; i <= 5; i++) {
 			if(!req.getParameter("room_name_"+i).trim().equals("")) {
 				dto = new RoomDTO();
@@ -61,7 +61,7 @@ public class RoomAnoController {
 		String upPath = session.getServletContext().getRealPath("/room_img");
 		try {
 			MultipartHttpServletRequest mr = (MultipartHttpServletRequest) req;
-			mr.setCharacterEncoding("EUC-KR");
+			//mr.setCharacterEncoding("EUC-KR");
 			MultipartFile mf = mr.getFile(filename);
 			
 			

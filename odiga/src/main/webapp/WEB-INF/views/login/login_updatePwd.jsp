@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <script type='text/javascript'>
 var update_emailCheck = false;
@@ -8,19 +8,19 @@ var passwdOk;
 
 function sendPasswd(){
 	if(!f_update.passwd1.value){
-		document.getElementById("pwd1_update_text").innerHTML = "ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À.";
+		document.getElementById("pwd1_update_text").innerHTML = "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤.";
 		$('.pwd1_update_font').addClass('font_red');
 		f_update.passwd1.focus();
 		return;
 	}else if(!f_update.passwd2.value){
-		document.getElementById("pwd2_update_text").innerHTML = "ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À.";
+		document.getElementById("pwd2_update_text").innerHTML = "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤.";
 		$('.pwd2_update_font').addClass('font_red');
 		$('.pwd2_update_gong').css("padding-top", "5");
 		f_update.passwd2.focus();
 		return;
 	}else{
 		if( passwdOk || update_emailCheck ){
-			alert("ºñ¹Ğ¹øÈ£°¡ º¯°æµÇ¾ú½À´Ï´Ù.")
+			alert("ë¹„ë°€ë²ˆí˜¸ê°€ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤.")
 			f_update.update_id.value = find_pwd_id.value;
 			f_update.submit();
 		}else{
@@ -32,12 +32,12 @@ function sendPasswd(){
 
 function pwd1_update_Ok(){
 	if(!password.test(f_update.passwd1.value)) {
-		document.getElementById("pwd1_update_text").innerHTML = "¿µ¹®,¼ıÀÚ,Æ¯¼ö¹®ÀÚ°¡ Æ÷ÇÔµÈ 6~15ÀÚ »çÀÌÀÇ ¹®ÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.";
+		document.getElementById("pwd1_update_text").innerHTML = "ì˜ë¬¸,ìˆ«ì,íŠ¹ìˆ˜ë¬¸ìê°€ í¬í•¨ëœ 6~15ì ì‚¬ì´ì˜ ë¬¸ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.";
 		$('.pwd1_update_font').removeClass('font_green');
 		$('.pwd1_update_font').addClass('font_red');
 		passwdOk = false;
 	}else {
-		document.getElementById("pwd1_update_text").innerHTML = "»ç¿ë °¡´ÉÇÑ ºñ¹Ğ¹øÈ£ÀÔ´Ï´Ù.";
+		document.getElementById("pwd1_update_text").innerHTML = "ì‚¬ìš© ê°€ëŠ¥í•œ ë¹„ë°€ë²ˆí˜¸ì…ë‹ˆë‹¤.";
 		$('.pwd1_update_font').removeClass('font_red');
 		$('.pwd1_update_font').addClass('font_green');
 		passwdOk = true;
@@ -48,34 +48,34 @@ function pwd2_update_Ok(){
 	$('.pwd2_update_gong').css("padding-top", "5");
 	
 	if(f_update.passwd1.value == f_update.passwd2.value && passwdOk){
-		document.getElementById("pwd2_update_text").innerHTML = "ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÕ´Ï´Ù.";
+		document.getElementById("pwd2_update_text").innerHTML = "ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•©ë‹ˆë‹¤.";
 		$('.pwd2_update_font').removeClass('font_red');
 		$('.pwd2_update_font').addClass('font_green');
 		update_emailCheck = true;
 	}else{
-		document.getElementById("pwd2_update_text").innerHTML = "ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.";
+		document.getElementById("pwd2_update_text").innerHTML = "ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.";
 		$('.pwd2_update_font').removeClass('font_green');
 		$('.pwd2_update_font').addClass('font_red');
 		update_emailCheck = false;
 	}
 }
 
-<!-- ÀÎÇ² 1¶§ 2 update_emailCheck = false; -->
+<!-- ì¸í’‹ 1ë•Œ 2 update_emailCheck = false; -->
 </script>
 
 <div class="w3-container w3-green" align="right" style="padding-top: 25px;  border-radius: 5px;">
-	<h2 style="margin-bottom: 0;">ºñ¹Ğ¹øÈ£ Àç¼³Á¤</h2>
+	<h2 style="margin-bottom: 0;">ë¹„ë°€ë²ˆí˜¸ ì¬ì„¤ì •</h2>
 </div>
 <form action = "login_updatePwdOk.do" name = "f_update" method = "post">
 	<div align = "left" style="padding: 1em;">
-		<label>ºñ¹Ğ¹øÈ£</label><br>
+		<label>ë¹„ë°€ë²ˆí˜¸</label><br>
 		<input class="w3-input" style="display: table-cell; outline: none;" type="password" name="passwd1" onkeyup="pwd1_update_Ok()">
 		<div class = "pwd1_update_gong" style="padding-top:5px;">
-			<font class = "pwd1_update_font font_red" id = "pwd1_update_text">¿µ¹®,¼ıÀÚ,Æ¯¼ö¹®ÀÚ°¡ Æ÷ÇÔµÈ 6~15ÀÚ »çÀÌÀÇ ¹®ÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.</font>
+			<font class = "pwd1_update_font font_red" id = "pwd1_update_text">ì˜ë¬¸,ìˆ«ì,íŠ¹ìˆ˜ë¬¸ìê°€ í¬í•¨ëœ 6~15ì ì‚¬ì´ì˜ ë¬¸ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.</font>
 		</div>
 		
 		 <div style="padding-top: 15px;">
-			<label>ºñ¹Ğ¹øÈ£ ÀçÀÔ·Â</label><br>
+			<label>ë¹„ë°€ë²ˆí˜¸ ì¬ì…ë ¥</label><br>
 			<input class="w3-input" style="display: table-cell; outline: none;" type="password" name="passwd2" onkeyup="pwd2_update_Ok()">
 			<div class = "pwd2_update_gong" style="padding-top:20px;">
 				<font class = "pwd2_update_font" id = "pwd2_update_text"></font>
@@ -84,7 +84,7 @@ function pwd2_update_Ok(){
 		 	
 		
 		<div class = "w3-container" style="padding: 0;padding-top: 30px;">
-			<input class="w3-input" style="border-radius: 4px;" type="button" value="ºñ¹Ğ¹øÈ£ º¯°æ" onclick="sendPasswd()">
+			<input class="w3-input" style="border-radius: 4px;" type="button" value="ë¹„ë°€ë²ˆí˜¸ ë³€ê²½" onclick="sendPasswd()">
 		</div>
 		
 		<input type="hidden" name = "update_id" id = "update_id">

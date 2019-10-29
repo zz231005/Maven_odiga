@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <style>
 label{
@@ -34,30 +34,30 @@ function find_pwd_email_Check(){
 
 function find_pwd_sendEmail(){
 	if(!find_pwd_id.value){
-		document.getElementById("find_id_text").innerHTML = "¾ÆÀÌµğ¸¦ ÀÔ·Â ÇÏ½Ê½Ã¿À.";
+		document.getElementById("find_id_text").innerHTML = "ì•„ì´ë””ë¥¼ ì…ë ¥ í•˜ì‹­ì‹œì˜¤.";
 		$('.find_id_font').addClass('font_red');
 		$('.find_id_gong').css("padding-top", "5");
 		find_pwd_id.focus();
 		return;
 	}else if(!find_pwd_email1.value || !find_pwd_email2.value){
-		document.getElementById("send_pwd_email_text").innerHTML = "ÀÌ¸ŞÀÏÀ» ÀÔ·Â ÇÏ½Ê½Ã¿À.";
+		document.getElementById("send_pwd_email_text").innerHTML = "ì´ë©”ì¼ì„ ì…ë ¥ í•˜ì‹­ì‹œì˜¤.";
 		$('.send_pwd_email_font').addClass('font_red');
 		$('.send_pwd_email_gong').css("padding-top", "5");
 		find_pwd_email1.focus();
 		return;
-	}else if(pwd_email_bt.value == "ÀÎÁõ¹øÈ£ È®ÀÎ"){
+	}else if(pwd_email_bt.value == "ì¸ì¦ë²ˆí˜¸ í™•ì¸"){
 		if(find_email_check){
 			document.getElementById('id_pwd_find').style.display='none';
 			document.getElementById('pwd_update').style.display='block';
 		}else{
-			document.getElementById("find_pwd_email_text").innerHTML = "ÀÎÁõ¹øÈ£¸¦ È®ÀÎÇÏ½Ê½Ã¿À.";
+			document.getElementById("find_pwd_email_text").innerHTML = "ì¸ì¦ë²ˆí˜¸ë¥¼ í™•ì¸í•˜ì‹­ì‹œì˜¤.";
 			$('.find_pwd_email_font').removeClass('font_green');
 			$('.find_pwd_email_font').addClass('font_red');
 			$('.find_pwd_email_gong').css("padding-top", "5");
 			find_pwd_in_email.focus();
 		}
 	}else{
-		if(pwd_email_bt.value == "ÀÎÁõ¹øÈ£ Àü¼Û"){
+		if(pwd_email_bt.value == "ì¸ì¦ë²ˆí˜¸ ì „ì†¡"){
 			$.ajax({
 				type: 'POST',
 				url: 'login_findpwdCheck.do',
@@ -67,13 +67,13 @@ function find_pwd_sendEmail(){
 				},
 				success: function(data){
 					if(data == 0){
-						alert("µî·ÏµÈ Á¤º¸°¡ ¾ø½À´Ï´Ù.")
+						alert("ë“±ë¡ëœ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.")
 						return;
 					}else{
-						alert("ÀÔ·ÂÇÏ½Å E-mail·Î ÀÎÁõ¹øÈ£°¡ Àü¼ÛµÇ¾ú½À´Ï´Ù.");
+						alert("ì…ë ¥í•˜ì‹  E-mailë¡œ ì¸ì¦ë²ˆí˜¸ê°€ ì „ì†¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
 						pwd_check_email = data;
 						$('.find_pwd_panel').addClass('find_pwd_panel_hei');
-						document.getElementById("pwd_email_bt").value = "ÀÎÁõ¹øÈ£ È®ÀÎ";
+						document.getElementById("pwd_email_bt").value = "ì¸ì¦ë²ˆí˜¸ í™•ì¸";
 					}
 				}
 			});
@@ -98,14 +98,14 @@ function input_pwd_find_email(){
 
 function find_pwd_email_Ok(){
 	if(pwd_check_email == find_pwd_in_email.value){
-		document.getElementById("find_pwd_email_text").innerHTML = "ÀÎÁõ¹øÈ£°¡ ÀÏÄ¡ÇÕ´Ï´Ù.";
+		document.getElementById("find_pwd_email_text").innerHTML = "ì¸ì¦ë²ˆí˜¸ê°€ ì¼ì¹˜í•©ë‹ˆë‹¤.";
 		$('.find_pwd_email_font').removeClass('font_red');
 		$('.find_pwd_email_font').addClass('font_green');
 		$('.find_pwd_email_gong').css("padding-top", "5");
 		find_email_check = true;
 		return;
 	}else{
-		document.getElementById("find_pwd_email_text").innerHTML = "ÀÎÁõ¹øÈ£°¡ Æ²·È½À´Ï´Ù.";
+		document.getElementById("find_pwd_email_text").innerHTML = "ì¸ì¦ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.";
 		$('.find_pwd_email_font').removeClass('font_green');
 		$('.find_pwd_email_font').addClass('font_red');
 		$('.find_pwd_email_gong').css("padding-top", "5");
@@ -117,10 +117,10 @@ function find_pwd_email_Ok(){
 </script>
 
 <div class="w3-container" align="right" style="padding-top: 25px;">
-	<h2>ºñ¹Ğ¹øÈ£ Ã£±â</h2>
+	<h2>ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°</h2>
 </div>
 <div style="margin-top: 15px; margin: 1em;" align="left">
-	<label>¾ÆÀÌµğ</label><br>
+	<label>ì•„ì´ë””</label><br>
 	<input class="w3-input" style="outline: none;" type="text" id="find_pwd_id" onkeyup="input_find_id()">
 	<div class="find_id_gong" style="padding-top: 20px;">
 		<font class="find_id_font" id = "find_id_text"></font>
@@ -132,12 +132,12 @@ function find_pwd_email_Ok(){
 		<font style="font-family: inherit; font-size: 17px; color:black;">@</font>
 		<input class="w3-input" style="width: 28%; display: table-cell; outline: none;" type="text" id="find_pwd_email2" name="find_pwd_email2" readOnly>
 		<select style="width: 28%; display: table-cell; outline: none; height: 49px" class="w3-input" name="find_pwd_email3" id="find_pwd_email3" onChange="find_pwd_email_Check()" >
-			<option value="">¼±ÅÃÇÏ¼¼¿ä</option>
+			<option value="">ì„ íƒí•˜ì„¸ìš”</option>
 			<option value="naver.com">naver.com</option>
 			<option value="hanmail.net">hanmail.net</option>
 			<option value="nate.com">nate.com</option>
 			<option value="gmail.com">gmail.com</option>
-			<option value="0">Á÷Á¢ÀÔ·Â</option>
+			<option value="0">ì§ì ‘ì…ë ¥</option>
 		</select>
 	</div>
 	<div class="send_pwd_email_gong" style="padding-top: 20px;">
@@ -145,12 +145,12 @@ function find_pwd_email_Ok(){
 	</div>
 	<div class="find_pwd_panel">
 		<input id = "find_pwd_in_email" type = "text" class = "w3-input" style="width: 73%; display: table-cell; outline: none;" onkeyup="input_pwd_find_email()" >
-		<input class = "w3-input" style="width: 25%;display: table-cell;cursor: pointer; border-radius: 4px;" type= "button" value = "ÀÌ¸ŞÀÏ ÀÎÁõ" onclick="find_pwd_email_Ok()">
+		<input class = "w3-input" style="width: 25%;display: table-cell;cursor: pointer; border-radius: 4px;" type= "button" value = "ì´ë©”ì¼ ì¸ì¦" onclick="find_pwd_email_Ok()">
 	</div>
 	<div class = find_pwd_email_gong style="padding-top: 20px;">
 		<font  id = "find_pwd_email_text" class = "find_pwd_email_font" ></font>
 	</div>
 </div>
 <div style="margin-top: 15px;" class = "w3-container">
-	<input id = "pwd_email_bt" class="w3-input" type="button" style=" border-radius: 4px;" value="ÀÎÁõ¹øÈ£ Àü¼Û" onclick="find_pwd_sendEmail()">
+	<input id = "pwd_email_bt" class="w3-input" type="button" style=" border-radius: 4px;" value="ì¸ì¦ë²ˆí˜¸ ì „ì†¡" onclick="find_pwd_sendEmail()">
 </div>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -177,7 +177,7 @@ function login_Check(){
 
 function go_search() {
 	if (f_search.search.value == "") {
-		alert("Áö¿ªÀÌ³ª È£ÅÚ¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä!!");
+		alert("ì§€ì—­ì´ë‚˜ í˜¸í…”ëª…ì„ ì…ë ¥í•˜ì„¸ìš”!!");
 		return false;
 	}else{
 		f_search.submit();
@@ -186,7 +186,7 @@ function go_search() {
 
 function del_hotel(num){
 	if("${sessionScope.user.admin}" == "" || "${sessionScope.user.admin}" == null){
-		alert("°ü¸®ÀÚ °èÁ¤¿ÜÀÇ °èÁ¤Àº »èÁ¦°¡ ºÒ°¡´ÉÇÕ´Ï´Ù.")
+		alert("ê´€ë¦¬ì ê³„ì •ì™¸ì˜ ê³„ì •ì€ ì‚­ì œê°€ ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤.")
 		return;
 	}
 	location.href = "hotel_delete.do?num="+num;
@@ -218,7 +218,7 @@ function getPopul(){
 $(document).ready(function(){
 	$('#cart_bt').on('click', function(){
 		if("${sessionScope.user }"==null || "${sessionScope.user }"== ""){
-			alert("ÂòÇÏ½Ç·Á¸é ·Î±×ÀÎÀ¸·Î ÀÌ¿ëºÎÅ¹µå¸³´Ï´Ù.")
+			alert("ì°œí•˜ì‹¤ë ¤ë©´ ë¡œê·¸ì¸ìœ¼ë¡œ ì´ìš©ë¶€íƒë“œë¦½ë‹ˆë‹¤.")
 			document.getElementById("login").style.display='block';
 			return
 		}
@@ -233,11 +233,11 @@ $(document).ready(function(){
 	             if(data>0){
 	             	document.getElementById("cart").style.display='block';
 	              }else{
-	                 alert("ÀÌ¹Ì Àå¹Ù±¸´Ï¿¡ Á¸ÀçÇÕ´Ï´Ù.");
+	                 alert("ì´ë¯¸ ì¥ë°”êµ¬ë‹ˆì— ì¡´ì¬í•©ë‹ˆë‹¤.");
 	              }
 	       },
 		      error:function(data){
-		          alert("error : ÇöÁ¦ÆäÀÌÁö¿¡¼­ ¿À·ù°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù. \n ´Ù½Ã ÀÌ¿ëºÎÅ¹µå¸³´Ï´Ù.");
+		          alert("error : í˜„ì œí˜ì´ì§€ì—ì„œ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤. \n ë‹¤ì‹œ ì´ìš©ë¶€íƒë“œë¦½ë‹ˆë‹¤.");
 		       }
 		  });
 	 });
@@ -247,7 +247,7 @@ $(document).ready(function(){
 <%@include file="/WEB-INF/views/odiga/top.jsp"%>
 	<div align = "center" id="Menu" class = "jbMenu display-topmiddle">
  		<form name = "f_search" action="hotel_search.do" method="post" style="margin: 0; ">
-	        <input type = "text" name = "search" class = "w3-input" style="display: table-cell; width: 300px;" placeholder="µµ½Ã,Áö¿ª,¼÷¼Ò¸í">
+	        <input type = "text" name = "search" class = "w3-input" style="display: table-cell; width: 300px;" placeholder="ë„ì‹œ,ì§€ì—­,ìˆ™ì†Œëª…">
 		       <c:if test = "${!empty start}">
 		        	 <input type = "date" name = "start" min="${start }"
 		        		value="${start }" class = "w3-input" style="display: table-cell; width: 300px;">
@@ -264,7 +264,7 @@ $(document).ready(function(){
 		        	 <input type = "date" name = "end" min="<fmt:formatDate value="${tomorrow }" type="DATE" pattern="yyyy-MM-dd"/>"
 				 	value="<fmt:formatDate value="${tomorrow }" type="DATE" pattern="yyyy-MM-dd"/>" class = "w3-input" style="display: table-cell; width: 300px;">
 		        </c:if>
-			<input type = "submit" class="button_ok" onclick="return go_search()" value ="¿ä±İ°Ë»öÇÏ±â" style="display: table-cell;">
+			<input type = "submit" class="button_ok" onclick="return go_search()" value ="ìš”ê¸ˆê²€ìƒ‰í•˜ê¸°" style="display: table-cell;">
 			<input type = "hidden" name = "pageNum" value = "1">
 		</form>
 	</div>
@@ -296,18 +296,18 @@ $(document).ready(function(){
 	<div align = "center" style="padding-top : 100px; display: table-cell">
 		<div id = "hei2">
 			<div style="width: 900px;" >
-			<!-- ÀÌ¸§ Àå¼Ò -->
+			<!-- ì´ë¦„ ì¥ì†Œ -->
 			<div align="left" style="padding-top: 20px; margin-top: 30px; border-top: 1px solid #ddd; padding-bottom: 20px; ">
 				<div style="margin-left: 10px;">
-					<label style="font-size: 30px; font-family: ³ª´®°íµñ; font-weight: bold; color: #1266FF;">
+					<label style="font-size: 30px; font-family: ë‚˜ëˆ”ê³ ë”•; font-weight: bold; color: #1266FF;">
 						 ${hotel.name }
 					</label>
 					<div style="margin-top: 5px;">
 						<i class="fa fa-leanpub"style="font-size: 20px; color:#41FF3A"></i>
 						<label style="font-size: 15px;">${hotel.roadaddrpart1 } ${hotel.addrdetail }</label> 
-						<label style="color: #A6A6A6; font-size: 12px;"> (¿ì ${hotel.zipno })</label>
+						<label style="color: #A6A6A6; font-size: 12px;"> (ìš° ${hotel.zipno })</label>
 					</div>
-					<div style="margin-top: 10px;"><!-- º° Á¡¼ö ³Ö´Â °÷ -->
+					<div style="margin-top: 10px;"><!-- ë³„ ì ìˆ˜ ë„£ëŠ” ê³³ -->
 						<div style="display: table-cell;">
 						<c:forEach var = "i" begin="1" end="5">
 							<c:choose>
@@ -330,12 +330,12 @@ $(document).ready(function(){
 							<div style="float: left;">
 								<i class="fa fa-edit" style="font-size:24px; color: #1266FF; display: table-cell;"></i>
 								<div style="display: table-cell; vertical-align: middle; padding-left: 5px;">
-									ÀÌ¿ëÈÄ±â <label id = "population" >${hotel.population }</label>°Ç
+									ì´ìš©í›„ê¸° <label id = "population" >${hotel.population }</label>ê±´
 								</div>
 							</div>
 							<div style="float: right;">
 								<c:if test="${!empty sessionScope.user.admin }">
-									<button style="cursor:pointer; padding:5px; border-radius: 5px; background: #FFA7A7; font-size : 14px; border: none; color:white; outline: none;" onclick = "del_hotel(${hotel.num})">»èÁ¦ÇÏ±â</button>
+									<button style="cursor:pointer; padding:5px; border-radius: 5px; background: #FFA7A7; font-size : 14px; border: none; color:white; outline: none;" onclick = "del_hotel(${hotel.num})">ì‚­ì œí•˜ê¸°</button>
 								</c:if>
 							</div>
 						</div>
@@ -343,11 +343,11 @@ $(document).ready(function(){
 				</div>
 			</div>
 			
-			<div style="padding-top: 40px; margin-top:20px;  border-top: 1px solid #ddd;"> <!-- ³»¿ë -->	
+			<div style="padding-top: 40px; margin-top:20px;  border-top: 1px solid #ddd;"> <!-- ë‚´ìš© -->	
 				<iframe name = "rooms_iframe" src = "rooms.do?hotel_num=${hotel.num }" frameborder="0" scrolling="no"  width="900px"></iframe>
 			</div>
 			
-			<div style="padding-top: 40px; margin-top:20px;  border-top: 1px solid #ddd;"><!-- ¸Ê -->
+			<div style="padding-top: 40px; margin-top:20px;  border-top: 1px solid #ddd;"><!-- ë§µ -->
 				<div style="width:800px; height:500px;">
 					<%@ include file="map.jsp" %>
 				</div>
@@ -358,9 +358,9 @@ $(document).ready(function(){
 			<div align="left" style="margin-top: 30px; padding-bottom: 30px; border-bottom: 1px solid #ddd; ">
 				<img src="hotel_img/${filename[0]}" style="object-fit: cover; width: 100%; height: 400px; margin-bottom: 30px;"/>
 				<div style=" display: table-cell; border-right: 1px solid #ddd; width: 180px; ">
-					<label style="font-size: 20px; margin-left: 10px; ">µÑ·¯º¸±â</label>
+					<label style="font-size: 20px; margin-left: 10px; ">ë‘˜ëŸ¬ë³´ê¸°</label>
 				</div>
-				<div style="display: table-cell;" ><!-- È£ÅÚ ¼³¸í¶õ -->
+				<div style="display: table-cell;" ><!-- í˜¸í…” ì„¤ëª…ë€ -->
 					<div style="margin: 5px 0 5px 20px;  vertical-align: top;">
 						<label style="font-size: 13px;"><!-- ${context }  -->
 							${fn:replace(hotel.content,crlf,'</br>')}
@@ -372,34 +372,34 @@ $(document).ready(function(){
 				
 			<div align="left" style="margin-top: 30px; padding-bottom: 30px; border-bottom: 1px solid #ddd;">
 				<div style=" display: table-cell; border-right: 1px solid #ddd; width: 180px;" >
-					<label style="font-size: 20px; margin-left: 10px;">½Ã¼³ ¹× ¼­ºñ½º</label><!-- ½Ã¼³ -->
+					<label style="font-size: 20px; margin-left: 10px;">ì‹œì„¤ ë° ì„œë¹„ìŠ¤</label><!-- ì‹œì„¤ -->
 				</div>
 				<div style="display: table-cell;">
 					<div style="margin: 5px 0 5px 20px;">
 						<c:if test="${hotel.parking }">
 							<i class="fa fa-car " style="font-size: 16px;"></i>
-		    					ÁÖÂ÷°¡´É<br>
+		    					ì£¼ì°¨ê°€ëŠ¥<br>
 			   			</c:if>
 					</div>
 				</div>
 			</div>
 		
-			<div align="left" style="margin-top: 30px; padding-bottom: 30px; border-bottom: 1px solid #ddd;"> <!-- Ã¼Å©ÀÎ/¾Æ¿ô -->
+			<div align="left" style="margin-top: 30px; padding-bottom: 30px; border-bottom: 1px solid #ddd;"> <!-- ì²´í¬ì¸/ì•„ì›ƒ -->
 				<div style=" display: table-cell; border-right: 1px solid #ddd; width: 180px;" >
-					<label style="font-size: 20px; margin-left: 10px;">ÀÌ¿ë Á¤º¸</label>
+					<label style="font-size: 20px; margin-left: 10px;">ì´ìš© ì •ë³´</label>
 				</div>
 				<div style="display: table-cell; vertical-align: top;" >
 					<div style="margin: 5px 0 5px 20px; ">
 						<label style="font-size: 13px;">
-							Ã¼Å©ÀÎ : ${hotel.checkin }<br>
-							Ã¼Å©¾Æ¿ô :  ${hotel.checkout }<br>
-							È¯ºÒ¿©ºÎ : 
+							ì²´í¬ì¸ : ${hotel.checkin }<br>
+							ì²´í¬ì•„ì›ƒ :  ${hotel.checkout }<br>
+							í™˜ë¶ˆì—¬ë¶€ : 
 							<c:choose>
 								<c:when test="${hotel.refund }">
-		    						<label style="font-size: 13px; color :green; font-weight: bold;">È¯ºÒ°¡´É</label>
+		    						<label style="font-size: 13px; color :green; font-weight: bold;">í™˜ë¶ˆê°€ëŠ¥</label>
 		    					</c:when>
 		    					<c:otherwise>
-		    						<label style="font-size: 13px; color :red; font-weight: bold;">È¯ºÒ ºÒ°¡´É</label>
+		    						<label style="font-size: 13px; color :red; font-weight: bold;">í™˜ë¶ˆ ë¶ˆê°€ëŠ¥</label>
 		    					</c:otherwise>
 			   				</c:choose>
 						</label>
@@ -408,25 +408,25 @@ $(document).ready(function(){
 			</div>
 			</div>
 	</div>
-	<div id = "comment_scr"style="margin-top: 30px; padding-bottom: 30px; "> <!-- ´ñ±Û -->
+	<div id = "comment_scr"style="margin-top: 30px; padding-bottom: 30px; "> <!-- ëŒ“ê¸€ -->
 		<iframe id = "comment_div" name ="comment_iframe" src="commentPage.do?hotel_num=${hotel.num }&pageNum=1" width="900px" frameborder="0"scrolling="No"></iframe>
 	</div>
 </div>
 <div style="display: table-cell; padding-left: 30px;">
 	<div style="border: 1px solid #ddd; padding: 0 15px; height: 440px; width: 400px; box-shadow: 0 0 4px #D5D5D5; ">
-		<form name = "pay_go" action="payment_Form.do" method="post" accept-charset="euc-kr">
+		<form name = "pay_go" action="payment_Form.do" method="post" accept-charset="UTF-8">
 			<input type = "hidden" name = "hotel_num" value ="${hotel.num }">
 			<input type = "hidden"name = "score" value = "${hotel.score }">
 			<input type = "hidden" name = "roadaddrpart1" value = "${hotel.roadaddrpart1 }">
 			<input type = "hidden" name =  "refund"	 value = "${hotel.refund }">
 			<input type ="hidden" name="price" value = "${hotel.price }">
        		<div style="margin: 20px 10px; text-align: right; ">
-       			<label style="font-size: 30px; font-family: ³ª´®°íµñ-B; font-weight: 500;">°áÁ¦ÇÏ±â</label>
+       			<label style="font-size: 30px; font-family: ë‚˜ëˆ”ê³ ë”•-B; font-weight: 500;">ê²°ì œí•˜ê¸°</label>
        		</div>
             <div align="center" style="text-align: left; padding-bottom: 10px;">
 	            <div style="padding-left:4px; display: table-cell;">
 	            	<label>
-						¿©&nbsp;Çà&nbsp;Áö&nbsp;
+						ì—¬&nbsp;í–‰&nbsp;ì§€&nbsp;
 					</label>
 				</div>
 	            <div style="display: table-cell;">
@@ -440,7 +440,7 @@ $(document).ready(function(){
             <div align="center" style="text-align: left;">
             	<div style="display: table-cell;">
 	            	<label>
-	                	¼÷¹ÚÀÏÁ¤ :
+	                	ìˆ™ë°•ì¼ì • :
 	                </label>
                 </div>
                 <div style="display: table-cell; padding-left: 10px;">
@@ -467,7 +467,7 @@ $(document).ready(function(){
 	            
 	      	<div align="center" style="text-align: left; padding-top: 20px;">
 	      		<div style="display: table-cell;">
-	      			<label style="padding-right: 10px;">ÀÏ¹Ú°¡°İ : </label>
+	      			<label style="padding-right: 10px;">ì¼ë°•ê°€ê²© : </label>
            		</div>
            		<div style="display: table-cell; ">
            			<input class = "sin_text"  style="display: table-cell; padding-top:10px; width: 280px; cursor: auto;" type="text" 
@@ -477,14 +477,14 @@ $(document).ready(function(){
             
 	         <div align="center" class="btng div2" style=" border-top: 1px solid #ddd;">
 	            <div align="center"  >
-	               <input type="button" id= "cart_bt" class="button2" value="ÂòÇÏ±â" style="outline: 0;">
-	               <input type="button" class="button1" onclick = "login_Check()" value="Áö±İ ¿¹¾àÇÏ±â" style="outline: 0;">
+	               <input type="button" id= "cart_bt" class="button2" value="ì°œí•˜ê¸°" style="outline: 0;">
+	               <input type="button" class="button1" onclick = "login_Check()" value="ì§€ê¸ˆ ì˜ˆì•½í•˜ê¸°" style="outline: 0;">
 	            </div>
 	         </div>
 	      </form>
 		</div>
 	</div>
-	<!-- Àå¹Ù±¸´Ï °¥·ÃÁö ¸»·ÃÁö -->
+	<!-- ì¥ë°”êµ¬ë‹ˆ ê°ˆë ¨ì§€ ë§ë ¨ì§€ -->
 	<div id="cart"  style="top:0; left :0; display: none; z-index: 3; height: 100%; width: 100%;  position: fixed;" >
 		<div style="top: 0; left: 0;right: 0;bottom: 0;position: fixed; background-color: rgba(0,0,0,.5); z-index: 3;"></div>
 		<div style="display: table; width: 100%;height: 100%;">
@@ -495,17 +495,17 @@ $(document).ready(function(){
 							<span onclick="document.getElementById('cart').style.display='none'" class="x_button x_display-topright" style="border-radius: 5px;">&times;</span>
 							<div style="padding-top: 2px; font-size: 25px; font-weight: bold; background-color: #4CAF50; border-radius: 5px 5px 0 0;">
 								<i class="fa fa-shopping-cart" style="font-size:24px; color: white;"></i>
-								<label style="font-size: 13px; color : white;">Àå¹Ù±¸´Ï</label>
+								<label style="font-size: 13px; color : white;">ì¥ë°”êµ¬ë‹ˆ</label>
 							</div>
 							<div style="padding-top:40px;">
 								<div style="padding-bottom:24px;">
-									<label style="font-size: 20px; font-weight: bold;">Àå¹Ù±¸´Ï¿¡ Ãß°¡ÇÏ¿´½À´Ï´Ù.</label>
+									<label style="font-size: 20px; font-weight: bold;">ì¥ë°”êµ¬ë‹ˆì— ì¶”ê°€í•˜ì˜€ìŠµë‹ˆë‹¤.</label>
 								</div>
 								<div style="display: table-cell; padding-right: 10px;">
-									<input type = "button" value = "Àå¹Ù ±¸´Ï"  style="font-weight:bold; padding: 10px 20px;border-radius: 5px;background: #ddd;border: none;outline:none; cursor: pointer;" onclick="location.href ='info_cart.do'">
+									<input type = "button" value = "ì¥ë°” êµ¬ë‹ˆ"  style="font-weight:bold; padding: 10px 20px;border-radius: 5px;background: #ddd;border: none;outline:none; cursor: pointer;" onclick="location.href ='info_cart.do'">
 								</div>
 								<div style="display: table-cell;">
-									<input type = "button" value = "°è¼Ó ÇÏ±â" onclick="document.getElementById('cart').style.display='none'" style="cursor: pointer; font-weight:bold;padding: 10px 20px;border-radius: 5px;background: #ddd;border: none;outline:none;" >
+									<input type = "button" value = "ê³„ì† í•˜ê¸°" onclick="document.getElementById('cart').style.display='none'" style="cursor: pointer; font-weight:bold;padding: 10px 20px;border-radius: 5px;background: #ddd;border: none;outline:none;" >
 								</div>
 							</div>
 						</div>
@@ -514,7 +514,7 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-	<!-- ·Î±×ÀÎ ÇÒ±×³Ä ¾ÈÇÒ±×³Ä -->
+	<!-- ë¡œê·¸ì¸ í• ê·¸ëƒ ì•ˆí• ê·¸ëƒ -->
 	<div id="if_login"  style="top:0; left :0; display: none; z-index: 3; height: 100%; width: 100%;  position: fixed;" >
 		<div style="top: 0; left: 0;right: 0;bottom: 0;position: fixed; background-color: rgba(0,0,0,.5); z-index: 3;"></div>
 		<div style="display: table; width: 100%;height: 100%;">
@@ -524,18 +524,18 @@ $(document).ready(function(){
 						<div style=" position: relative;">
 							<span onclick="document.getElementById('if_login').style.display='none'" class="x_button x_display-topright" style="border-radius: 5px;">&times;</span>
 							<div style="font-size: 25px; font-weight: bold; background-color: #4CAF50; border-radius: 5px 5px 0 0; padding: 10px 0;">
-								<label style="font-size: 13px; color : white;;">ºñÈ¸¿ø ÀÌ¿ëÁßÀÔ´Ï´Ù.</label>
+								<label style="font-size: 13px; color : white;;">ë¹„íšŒì› ì´ìš©ì¤‘ì…ë‹ˆë‹¤.</label>
 							</div>
 							<div style="padding-top:40px;">
 								<div style="padding-bottom:24px;">
-									<label style="font-size: 20px; font-weight: bold;">·Î±×ÀÎÀ» ÇÏ½Ã°Ú½À´Ï±î?</label>
+									<label style="font-size: 20px; font-weight: bold;">ë¡œê·¸ì¸ì„ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?</label>
 								</div>
 								<div style="display: table-cell; padding-right: 10px;">
-									<input type = "button" value = "·Î±×ÀÎ ¿¹¾à"  onclick="document.getElementById('if_login').style.display='none'; document.getElementById('login').style.display='block';"
+									<input type = "button" value = "ë¡œê·¸ì¸ ì˜ˆì•½"  onclick="document.getElementById('if_login').style.display='none'; document.getElementById('login').style.display='block';"
 									style="font-weight:bold; padding: 10px 20px;border-radius: 5px;background: #ddd;border: none;outline:none; cursor: pointer;" onclick="location.href ='info_cart.do'">
 								</div>
 								<div style="display: table-cell;">
-									<input type = "button" onclick = "document.pay_go.submit();" value = "ºñÈ¸¿ø ¿¹¾à" style="cursor: pointer; font-weight:bold;padding: 10px 20px;border-radius: 5px;background: #ddd;border: none;outline:none;" >	
+									<input type = "button" onclick = "document.pay_go.submit();" value = "ë¹„íšŒì› ì˜ˆì•½" style="cursor: pointer; font-weight:bold;padding: 10px 20px;border-radius: 5px;background: #ddd;border: none;outline:none;" >	
 								</div>
 							</div>
 						</div>

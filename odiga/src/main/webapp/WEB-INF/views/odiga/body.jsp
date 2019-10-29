@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
  <script>
@@ -33,7 +33,7 @@
 	color: white;
 	font-size: 35px;
 	font-weight: bolder;
-	font-family: ³ª´®°íµñ;
+	font-family: ë‚˜ëˆ”ê³ ë”•;
 }
 
 .city_img{
@@ -44,34 +44,34 @@
 }
 
  </style>
- <div   align = "center">
+ <div align = "center">
 	<div style="padding: 80px 0 20px 0">
-		<font class = "Nanum" size = "5px">¡¶ ¿À´ÃÀÇ Æ¯°¡ »óÇ° ¡·</font><br>
+		<font class = "Nanum" size = "5px">ã€Š ì˜¤ëŠ˜ì˜ íŠ¹ê°€ ìƒí’ˆ ã€‹</font><br>
 	</div>
 	<iframe style="width: 1197px; height: 350px;" frameborder="0" scrolling="no" src="hotel_list.do" ></iframe>
 			
 			
 <div style=" padding-bottom:100px;">
 <div align = "center" style="padding: 80px 0 30px 0">
-	<font class = "Nanum" size = "5px">¡¶ ¿ì¸®³ª¶ó À¯¸í °ü±¤Áö ¡·</font>
+	<font class = "Nanum" size = "5px">ã€Š ìš°ë¦¬ë‚˜ë¼ ìœ ëª… ê´€ê´‘ì§€ ã€‹</font>
 </div>
 	<div align="center" style="width:1197px; height:300px;">		
 		<div style="width:100%; height:100%; overflow:hidden;">
 	        <div  class= "w3-display-container" style="width: 40%; height:300px; border-radius: 5px; float:left; padding-right: 10px">
 				<div  class = "w3-display-container">
-					<img src="city_img/¼­¿ï.jpg" class = "city_img">
-					<div onclick="go_link('¼­¿ï')" class = "back_black w3-display-middle">
+					<img src="city_img/ì„œìš¸.jpg" class = "city_img">
+					<div onclick="go_link('ì„œìš¸')" class = "back_black w3-display-middle">
 						<span class = "op_black w3-display-middle"></span>
-						<span class = "city_font w3-display-middle " >¼­ ¿ï</span>
+						<span class = "city_font w3-display-middle " >ì„œ ìš¸</span>
 					</div>
 	           	</div>
 	        </div>
 			<div class= "w3-display-container" style="width: 60%; height:300px; border-radius: 5px; float:left;">
 				<div  class = "w3-display-container">
-					<img src="city_img/¼øÃµ.jpg" class = "city_img">
-					<div onclick="go_link('¼øÃµ')" class = "back_black w3-display-middle">
+					<img src="city_img/ìˆœì²œ.jpg" class = "city_img">
+					<div onclick="go_link('ìˆœì²œ')" class = "back_black w3-display-middle">
 						<span class = "op_black w3-display-middle"></span>
-						<span class = "city_font w3-display-middle">¼ø Ãµ</span>
+						<span class = "city_font w3-display-middle">ìˆœ ì²œ</span>
 					</div>	
 				</div>
 			</div>
@@ -83,38 +83,38 @@
 		<div style="width:100%; height:100%; overflow:hidden; border-radius: 5px;">
              <div  class= "w3-display-container" style="width: 33%; height:100%; border-radius: 5px; float:left; padding-right: 10px">
 				<div  class = "w3-display-container">
-					<img src="city_img/°æÁÖ.jpg" class = "city_img">
-					<div onclick="go_link('°æÁÖ')" class = "back_black w3-display-middle">
+					<img src="city_img/ê²½ì£¼.jpg" class = "city_img">
+					<div onclick="go_link('ê²½ì£¼')" class = "back_black w3-display-middle">
 						<span class = "op_black w3-display-middle"></span>
-						<span class = "city_font w3-display-middle">°æ ÁÖ</span>
+						<span class = "city_font w3-display-middle">ê²½ ì£¼</span>
 					</div>
 				</div>
 			</div>
              <div  class= "w3-display-container" style="width: 33%; height:100%; border-radius: 5px; float:left; padding-right: 10px">
 				<div  class = "w3-display-container">
-					<img src="city_img/°ÅÁ¦.jpg" class = "city_img">
-					<div onclick="go_link('°ÅÁ¦')" class = "back_black w3-display-middle">
+					<img src="city_img/ê±°ì œ.jpg" class = "city_img">
+					<div onclick="go_link('ê±°ì œ')" class = "back_black w3-display-middle">
 						<span class = "op_black w3-display-middle"></span>
-						<span class = "city_font w3-display-middle">°Å Á¦</span>
+						<span class = "city_font w3-display-middle">ê±° ì œ</span>
 					</div>
 				</div>
 			</div>
              <div style="width: 34%; height: 390px; float:left;">
 				<div  class= "w3-display-container" style="width: 100%; height:50%; border-radius: 5px; float:left; padding-bottom: 10px">
 					<div  class = "w3-display-container">
-						<img src="city_img/ºÎ»ê.jpg" class = "city_img">
-						<div onclick="go_link('ºÎ»ê')" class = "back_black w3-display-middle">
+						<img src="city_img/ë¶€ì‚°.jpg" class = "city_img">
+						<div onclick="go_link('ë¶€ì‚°')" class = "back_black w3-display-middle">
 							<span class = "op_black w3-display-middle"></span>
-							<span class = "city_font w3-display-middle">ºÎ »ê</span>
+							<span class = "city_font w3-display-middle">ë¶€ ì‚°</span>
 						</div>
 					</div>
 				</div>
 				<div  class= "w3-display-container" style="width: 100%; height:50%; border-radius: 5px; float:left;">
 					<div  class = "w3-display-container">
-						<img src="city_img/°­¿øµµ.jpg" class = "city_img">
-						<div onclick="go_link('°­¿øµµ')" class = "back_black w3-display-middle">
+						<img src="city_img/ê°•ì›ë„.jpg" class = "city_img">
+						<div onclick="go_link('ê°•ì›ë„')" class = "back_black w3-display-middle">
 							<span class = "op_black w3-display-middle"></span>
-							<span class = "city_font w3-display-middle">°­ ¿ø µµ</span>
+							<span class = "city_font w3-display-middle">ê°• ì› ë„</span>
 						</div>
 					</div>
 				</div>
@@ -126,19 +126,19 @@
       	<div style="width:100%; height:100%; overflow:hidden; border-radius: 5px;">
 	       	<div  class= "w3-display-container" style="width: 60%; height:100%; border-radius: 5px; float:left; padding-right: 10px">
 				<div  class = "w3-display-container">
-					<img src="city_img/¾Èµ¿.jpg" class = "city_img">
-					<div onclick="go_link('¾Èµ¿')" class = "back_black w3-display-middle">
+					<img src="city_img/ì•ˆë™.jpg" class = "city_img">
+					<div onclick="go_link('ì•ˆë™')" class = "back_black w3-display-middle">
 						<span class = "op_black w3-display-middle"></span>
-						<span class = "city_font w3-display-middle">¾È µ¿</span>
+						<span class = "city_font w3-display-middle">ì•ˆ ë™</span>
 					</div>
 				</div>
 			</div>
 			<div  class= "w3-display-container" style="width: 40%; height:100%; border-radius: 5px; float:left;">
 				<div  class = "w3-display-container">
-					<img src="city_img/Á¦ÁÖ.jpg" class = "city_img">
-					<div onclick="go_link('Á¦ÁÖ')" class = "back_black w3-display-middle">
+					<img src="city_img/ì œì£¼.jpg" class = "city_img">
+					<div onclick="go_link('ì œì£¼')" class = "back_black w3-display-middle">
 						<span class = "op_black w3-display-middle"></span>
-						<span class = "city_font w3-display-middle">Á¦ ÁÖ</span>
+						<span class = "city_font w3-display-middle">ì œ ì£¼</span>
 					</div>
 				</div>
 			</div>

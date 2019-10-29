@@ -39,7 +39,7 @@ public class LoginAnoController {
 			user.put("id", id);
 			session.setAttribute("user", user);
 			if(id.equals("admin")) {
-				user.put("admin","°ü¸®ÀÚ");
+				user.put("admin","ê´€ë¦¬ì");
 			}
 			return "1";
 		}else {
@@ -64,11 +64,11 @@ public class LoginAnoController {
 		if(id == null)
 			return "0";
 		
-		String from="gudwls072@naver.com"; // ÀÌ¸ŞÀÏ º¸³»´Â ÁÖ¼Ò
-		String subject="Odiga IDÃ£±â ¼­ºñ½ºÀÔ´Ï´Ù."; // Á¦¸ñ
-		String content="°¡ÀÔÇÑ ID:"+ id;
+		String from="gudwls072@naver.com"; // ì´ë©”ì¼ ë³´ë‚´ëŠ” ì£¼ì†Œ
+		String subject="Odiga IDì°¾ê¸° ì„œë¹„ìŠ¤ì…ë‹ˆë‹¤."; // ì œëª©
+		String content="ê°€ì…í•œ ID:"+ id;
 		
-		Properties p = new Properties(); // Á¤º¸¸¦ ´ãÀ» °´Ã¼
+		Properties p = new Properties(); // ì •ë³´ë¥¼ ë‹´ì„ ê°ì²´
 		p.put("mail.smtp.host","smtp.naver.com");
 		p.put("mail.smtp.port", "465");
 		p.put("mail.smtp.starttls.enable", "true");
@@ -82,16 +82,16 @@ public class LoginAnoController {
 	    Authenticator auth = new SMTPAuthenticatior();
 	    Session ses = Session.getInstance(p, auth);
 	    ses.setDebug(true);
-	    MimeMessage msg = new MimeMessage(ses); // ¸ŞÀÏÀÇ ³»¿ëÀ» ´ãÀ» °´Ã¼
-	    msg.setSubject(subject); //  Á¦¸ñ
+	    MimeMessage msg = new MimeMessage(ses); // ë©”ì¼ì˜ ë‚´ìš©ì„ ë‹´ì„ ê°ì²´
+	    msg.setSubject(subject); //  ì œëª©
 	    StringBuffer buffer = new StringBuffer();
 	    buffer.append(content);
 	    Address fromAddr = new InternetAddress(from);
 	    msg.setFrom(fromAddr); 
 	    Address toAddr = new InternetAddress(email);
-	    msg.addRecipient(Message.RecipientType.TO, toAddr); // ¹Ş´Â »ç¶÷
-	    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ³»¿ë   
-	    Transport.send(msg); // Àü¼Û  
+	    msg.addRecipient(Message.RecipientType.TO, toAddr); // ë°›ëŠ” ì‚¬ëŒ
+	    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ë‚´ìš©   
+	    Transport.send(msg); // ì „ì†¡  
 
 		return "1";
 	}
@@ -102,12 +102,12 @@ public class LoginAnoController {
 		int count = loginMapper.findPwd(id, email);
 		if(count == 0)
 			return "0";
-		String from="gudwls072@naver.com"; // ÀÌ¸ŞÀÏ º¸³»´Â ÁÖ¼Ò
-		String subject="Odiga ¸ŞÀÏÀÎÁõ ¼­ºñ½ºÀÔ´Ï´Ù."; // Á¦¸ñ
+		String from="gudwls072@naver.com"; // ì´ë©”ì¼ ë³´ë‚´ëŠ” ì£¼ì†Œ
+		String subject="Odiga ë©”ì¼ì¸ì¦ ì„œë¹„ìŠ¤ì…ë‹ˆë‹¤."; // ì œëª©
 		int num=(int)(Math.random()*99999)+10000;
-		String content="ÀÎÁõ¹øÈ£:"+num;
+		String content="ì¸ì¦ë²ˆí˜¸:"+num;
 		
-		Properties p = new Properties(); // Á¤º¸¸¦ ´ãÀ» °´Ã¼
+		Properties p = new Properties(); // ì •ë³´ë¥¼ ë‹´ì„ ê°ì²´
 		p.put("mail.smtp.host","smtp.naver.com");
 		p.put("mail.smtp.port", "465");
 		p.put("mail.smtp.starttls.enable", "true");
@@ -122,9 +122,9 @@ public class LoginAnoController {
 	    Session ses = Session.getInstance(p, auth);
 	      
 	    ses.setDebug(true);
-	    MimeMessage msg = new MimeMessage(ses); // ¸ŞÀÏÀÇ ³»¿ëÀ» ´ãÀ» °´Ã¼ 
+	    MimeMessage msg = new MimeMessage(ses); // ë©”ì¼ì˜ ë‚´ìš©ì„ ë‹´ì„ ê°ì²´ 
 	 
-	    msg.setSubject(subject); //  Á¦¸ñ
+	    msg.setSubject(subject); //  ì œëª©
 	 
 	    StringBuffer buffer = new StringBuffer();
 	    buffer.append(content);
@@ -132,10 +132,10 @@ public class LoginAnoController {
 	    msg.setFrom(fromAddr); 
 	 
 	    Address toAddr = new InternetAddress(email);
-	    msg.addRecipient(Message.RecipientType.TO, toAddr); // ¹Ş´Â »ç¶÷
+	    msg.addRecipient(Message.RecipientType.TO, toAddr); // ë°›ëŠ” ì‚¬ëŒ
 	     
-	    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ³»¿ë
-	    Transport.send(msg); // Àü¼Û
+	    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ë‚´ìš©
+	    Transport.send(msg); // ì „ì†¡
 		return String.valueOf(num);
 	}
 	

@@ -38,7 +38,7 @@ public class CommentAnoController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/comment_write.do") // Æ÷½ºÆ®¹æ½ÄÀÏ¶§´Â ¿©±â·Î
+	@RequestMapping(value = "/comment_write.do")
 	public void CommentWrite(CommentDTO comment_dto, double score, int population) {
 		commentMapper.writeComment(comment_dto);
 		double score_total = ((score * population) + comment_dto.getStar_rate()) / (population+1);
@@ -46,11 +46,11 @@ public class CommentAnoController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/comment_delete.do", method = RequestMethod.POST) // Æ÷½ºÆ®¹æ½ÄÀÏ¶§´Â ¿©±â·Î
+	@RequestMapping(value = "/comment_delete.do", method = RequestMethod.POST)
 	public int commentDelete(CommentDTO comment_dto, double score, int population) {
 		int res = commentMapper.deleteComment(comment_dto.getNum(), comment_dto.getPasswd());
 		double score_total = 0;
-		System.out.println("³ª¿Â °ª : " + res);
+		System.out.println("ë‚˜ì˜¨ ê°’ : " + res);
 		if(res > 0) {
 			if(population != 1) {
 				score_total = (((score * population) - comment_dto.getStar_rate()) / (population-1));
@@ -61,7 +61,7 @@ public class CommentAnoController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/comment_update.do", method = RequestMethod.POST) // Æ÷½ºÆ®¹æ½ÄÀÏ¶§´Â ¿©±â·Î
+	@RequestMapping(value = "/comment_update.do", method = RequestMethod.POST)
 	public int commentUpdatePro(CommentDTO dto) {
 		int res = commentMapper.updateComment(dto);
 		return res;

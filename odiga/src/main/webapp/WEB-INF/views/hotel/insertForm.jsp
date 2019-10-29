@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, java.text.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
@@ -16,21 +16,21 @@
     
 	function insertCheck() {
 		if (f_input.name.value == "") {
-			alert("È£ÅÚ¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä!!");
+			alert("í˜¸í…”ëª…ì„ ì…ë ¥í•˜ì„¸ìš”!!");
 			f_input.name.focus();
 			return false;
 		}else if (f_input.price.value == "") {
-			alert("°¡°İÀ» ÀÔ·ÂÇÏ¼¼¿ä!!");
+			alert("ê°€ê²©ì„ ì…ë ¥í•˜ì„¸ìš”!!");
 			f_input.price.focus();
 			return false;
 		}else if(!f_input.addrdetail){
-			alert("ÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä.")
+			alert("ì£¼ì†Œë¥¼ ì…ë ¥í•˜ì„¸ìš”.")
 			f_input.addrdetail.focus();
 		}else if (count < 6 || count >6) {
-			alert("ÀÌ¹ÌÁö¸¦ 6°³¸¦ ³Ö¾îÁÖ¼¼¿ä");
+			alert("ì´ë¯¸ì§€ë¥¼ 6ê°œë¥¼ ë„£ì–´ì£¼ì„¸ìš”");
 			return false;
 		}else if(f_input.content ==""){
-			alert("È£ÅÚ ¼Ò°³¸¦ ÀÔ·ÂÇÏ¼¼¿ä")
+			alert("í˜¸í…” ì†Œê°œë¥¼ ì…ë ¥í•˜ì„¸ìš”")
 			f_input.content.focus();
 		}
 		f_input.submit();
@@ -75,7 +75,7 @@
           		}
       		}
         	if(count_Max){
-        		alert("»çÁøÀº 6°³±îÁö °¡´ÉÇÕ´Ï´Ù.")
+        		alert("ì‚¬ì§„ì€ 6ê°œê¹Œì§€ ê°€ëŠ¥í•©ë‹ˆë‹¤.")
         		count_Max = false;
         	}
        	}
@@ -180,14 +180,14 @@ td {
 
 	<div align="center" >
 	<div style="width: 500px; background: #E1F6FA; padding-top:20px;">
-		<label style="font-size: 30px; font-weight: bold;">È£ÅÚ µî·ÏÇÏ±â</label>
+		<label style="font-size: 30px; font-weight: bold;">í˜¸í…” ë“±ë¡í•˜ê¸°</label>
 	</div>
 	<form name="f_input" id="form" action="hotel_insert.do" method="post" enctype="multipart/form-data">
 		<div id="stylized" class="myform" align="center" style="width: 500px; display: table-cell;">
 
 			<div class = "div_text">
 				<div class = "label_text" style="display: table-cell;">
-					<label>È£ÅÚ ¸í</label>
+					<label>í˜¸í…” ëª…</label>
 				</div>
 				<div style="display: table-cell;">
 					<input type="text" name="name" size="35" class = "in_hotel_text">
@@ -196,17 +196,17 @@ td {
 			
 			<div class ="div_text">
 				<div class = "label_text" style="display: table-cell;">
-					<label>ÁÖ¼Ò</label>
+					<label>ì£¼ì†Œ</label>
 				</div>
 				<div style="display: table-cell;">
 					<input class = "in_hotel_text" type="text" size="26" id="roadaddrpart1" name="roadaddrpart1"  ReadOnly>
-					<button class = "button" type="button" style="margin-left: 5px;" onclick="goPopup();">ÁÖ¼Ò°Ë»ö</button>
+					<button class = "button" type="button" style="margin-left: 5px;" onclick="goPopup();">ì£¼ì†Œê²€ìƒ‰</button>
 				</div>
 			</div>
 			
 			<div class ="div_text">
 				<div class = "label_text" style="display: table-cell;">
-					<label>»ó¼¼ÁÖ¼Ò</label>
+					<label>ìƒì„¸ì£¼ì†Œ</label>
 				</div>
 				<div style="display: table-cell;">
 					<input class = "in_hotel_text" type="text" size="35" id="addrdetail" name="addrdetail" >
@@ -215,17 +215,17 @@ td {
 			
 			<div class ="div_text">
             <div class = "label_text" style="display: table-cell;">
-               <label>¿ìÆí¹øÈ£ :</label>
+               <label>ìš°í¸ë²ˆí˜¸ :</label>
             </div>
             <div style="display: table-cell;">
-               <input class = "in_hotel_text" type="text" size="35" id="zipno" name="zipno" value="(¿ì)" ReadOnly>
+               <input class = "in_hotel_text" type="text" size="35" id="zipno" name="zipno" value="(ìš°)" ReadOnly>
             </div>
          </div>
 			
 			
 			<div class ="div_text">
 				<div class = "label_text" style="display: table-cell;">
-					<label>°¡°İ</label>
+					<label>ê°€ê²©</label>
 				</div>
 				<div style="display: table-cell;">
 					<input class = "in_hotel_text" type="text" id = "price" name="price" size="35" value="${dto.price }">
@@ -235,7 +235,7 @@ td {
 
 			<div class ="div_text">
 				<div class = "label_text" style="display: table-cell;">
-					<label>Ã¼Å©ÀÎ</label>
+					<label>ì²´í¬ì¸</label>
 				</div>
 				<div style="display: table-cell;">
 					<select class = "in_hotel_text" name="checkin">
@@ -253,7 +253,7 @@ td {
 			
 			<div class ="div_text">
 				<div class = "label_text" style="display: table-cell;">
-					<label>Ã¼Å©¾Æ¿ô</label>
+					<label>ì²´í¬ì•„ì›ƒ</label>
 				</div>
 				<div style="display: table-cell;">
 					<select class = "in_hotel_text" name="checkout">
@@ -270,7 +270,7 @@ td {
 		
 			<div class ="div_text">
 				<div class = "label_text" style="display: table-cell;">
-					<label>Ã·ºÎ»çÁø</label>
+					<label>ì²¨ë¶€ì‚¬ì§„</label>
 				</div>
 				<div style="display: table-cell;">
 					<input id = "imgInp" type="file" name="filename" size="39" multiple>
@@ -287,25 +287,25 @@ td {
 							</c:if>
 				   		</c:forEach>
 			   		</div>
-					<label style="font-size: 13px; color :red; width: 300px;">Ã¹ ¹øÂ° »çÁøÀÌ ¸ŞÀÎÆäÀÌÁö·Î ¼³Á¤µË´Ï´Ù.</label>
+					<label style="font-size: 13px; color :red; width: 300px;">ì²« ë²ˆì§¸ ì‚¬ì§„ì´ ë©”ì¸í˜ì´ì§€ë¡œ ì„¤ì •ë©ë‹ˆë‹¤.</label>
 				</div>
 			</div>
 			
 			
 			<div class ="div_text">
 				<div class = "label_text" style="display: table-cell;">
-					<label>¿É¼Ç</label>
+					<label>ì˜µì…˜</label>
 				</div>
 				<div style="display: table-cell;">
-					<input type="checkbox" name="parking" value="true" />ÁÖÂ÷°¡´É<br>
-					<input type="checkbox" name="refund" value="true" />È¯ºÒ°¡´É
+					<input type="checkbox" name="parking" value="true" />ì£¼ì°¨ê°€ëŠ¥<br>
+					<input type="checkbox" name="refund" value="true" />í™˜ë¶ˆê°€ëŠ¥
 				</div>
 			</div>
 			
 			
 			<div class ="div_text">
 				<div class = "label_text" style="display: table-cell;">
-					<label style="vertical-align: middle; position: absolute;padding-top: 100px;">È£ÅÚ¼Ò°³</label>
+					<label style="vertical-align: middle; position: absolute;padding-top: 100px;">í˜¸í…”ì†Œê°œ</label>
 				</div>
 				<div style="display: table-cell;">
 					<textarea name = "content" id = "content" cols = "41" rows = "11" style="resize: none; font-size : 13px;"></textarea>
@@ -314,8 +314,8 @@ td {
 			
 		</div>
 		<div style="background:#E1F6FA; width: 500px; padding-bottom: 20px;">
-			<button class = "button" type="button" class = "button_ok" onclick="insertCheck()">»óÇ°µî·Ï</button>
-			<button class = "button" type="button" class = "button_ok" onclick="window.location='index.do'">»óÇ°¸ñ·Ï</button>
+			<button class = "button" type="button" class = "button_ok" onclick="insertCheck()">ìƒí’ˆë“±ë¡</button>
+			<button class = "button" type="button" class = "button_ok" onclick="window.location='index.do'">ìƒí’ˆëª©ë¡</button>
 		</div>
 	</form>
 	</div>

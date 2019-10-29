@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -40,13 +40,13 @@ label{
 						<c:when test = "${dto.smoking }">
 							<div style="float: left;">
 								<i class="material-icons" style="font-size:16px;">smoking_rooms</i>
-								<label style="font-size: 14px;">Èí¿¬ °¡´É</label>
+								<label style="font-size: 14px;">í¡ì—° ê°€ëŠ¥</label>
 							</div>
 						</c:when>
 						<c:otherwise>
 							<div style="float: left;">
 								<i class="material-icons" style="font-size:16px;">smoke_free</i>
-								<label style="font-size: 14px;">Èí¿¬ ºÒ°¡´É</label>
+								<label style="font-size: 14px;">í¡ì—° ë¶ˆê°€ëŠ¥</label>
 							</div>
 						</c:otherwise>
 					</c:choose>
@@ -54,21 +54,21 @@ label{
 						<span class = "line"></span>
 						<div style="float: left;">
 							<i class="material-icons" style="font-size:16px;">wifi</i>
-							<label>°´½Ç wifi</label>
+							<label>ê°ì‹¤ wifi</label>
 						</div>
 					</c:if>
 					<c:if test = "${dto.breakfast }">
 						<span class = "line"></span>
 						<div style="float: left;">
 							<i class="material-icons" style="font-size:16px;">restaurant</i>
-							<label style="font-size: 14px;">Á¶½Ä Æ÷ÇÔ</label>
+							<label style="font-size: 14px;">ì¡°ì‹ í¬í•¨</label>
 						</div>
 					</c:if>
 					<c:if test = "${dto.smoking }">
 						<span class = "line"></span>
 						<div style="float: left;">
 							<i class="material-icons" style="font-size:16px;">smoking_rooms</i>
-							<label style="font-size: 14px;">Èí¿¬ °¡´É</label>
+							<label style="font-size: 14px;">í¡ì—° ê°€ëŠ¥</label>
 						</div>
 					</c:if>
 					<c:choose>
@@ -76,30 +76,30 @@ label{
 							<span class = "line"></span>
 							<div style="float: left;">
 							<i class="material-icons" style="font-size:16px;">local_dining</i>
-							<label style="font-size: 14px;">Ãë»ç °¡´É</label>
+							<label style="font-size: 14px;">ì·¨ì‚¬ ê°€ëŠ¥</label>
 						</div>
 						</c:when>
 						<c:otherwise>
 							<span class = "line"></span>
 							<div style="float: left;">
 							<i class="material-icons" style="font-size:16px;">local_dining</i>
-							<label style="font-size: 14px;">Ãë»ç ºÒ°¡´É</label>
+							<label style="font-size: 14px;">ì·¨ì‚¬ ë¶ˆê°€ëŠ¥</label>
 						</div>
 						</c:otherwise>
 					</c:choose>
 				</div><br>
 				<div style=" text-align: left; float: left; padding-top:20px;">
 					<div style="font-size :14px">
-						<label>±âº»ÀÎ¿ø : </label>
+						<label>ê¸°ë³¸ì¸ì› : </label>
 						<label>${dto.minp }</label>
 					</div>
 					<div style="font-size :14px">
-						<label >ÃÖ´ëÀÎ¿ø : </label>
+						<label >ìµœëŒ€ì¸ì› : </label>
 						<label>${dto.maxp }</label>
 					</div>
 				</div>
 				<div style="float: right; vertical-align: bottom; padding-top:30px;">
-					<label style="font-size: 20px; font-weight: bold;">£Ü <fmt:formatNumber value="${dto.price }" groupingUsed="true"/></label>
+					<label style="font-size: 20px; font-weight: bold;">ï¿¦ <fmt:formatNumber value="${dto.price }" groupingUsed="true"/></label>
 				</div>
 			</div>
 		</div>

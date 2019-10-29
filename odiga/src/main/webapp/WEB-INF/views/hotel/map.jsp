@@ -1,5 +1,5 @@
- <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <?
 	$address1      =   $_REQUEST["address"];
 	$arr_address   =   explode("(",$address1);
@@ -44,7 +44,7 @@ html, body, #map-canvas {
 	function initialize() {
 		var mapOptions = {
 			zoom : 19,
-			/*center : new google.maps.LatLng(37.5651, 126.98955), //¼­¿ï
+			/*center : new google.maps.LatLng(37.5651, 126.98955), //ì„œìš¸
 			mapTypeId : google.maps.MapTypeId.ROADMAP*/
 		};
 
@@ -76,7 +76,7 @@ html, body, #map-canvas {
 				});
 
 			} else {
-				alert('ÁÖ¼Ò¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù. ');
+				alert('ì£¼ì†Œë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ');
 			}
 		});
 	}

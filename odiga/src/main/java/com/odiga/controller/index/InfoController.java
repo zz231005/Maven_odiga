@@ -103,13 +103,13 @@ public class InfoController {
 			return "1";
 		}
 		
-		String from="gudwls072@naver.com"; // ÀÌ¸ŞÀÏ º¸³»´Â ÁÖ¼Ò
-		String subject="Odiga ¸ŞÀÏÀÎÁõ ¼­ºñ½ºÀÔ´Ï´Ù."; // Á¦¸ñ
+		String from="gudwls072@naver.com"; // ì´ë©”ì¼ ë³´ë‚´ëŠ” ì£¼ì†Œ
+		String subject="Odiga ë©”ì¼ì¸ì¦ ì„œë¹„ìŠ¤ì…ë‹ˆë‹¤."; // ì œëª©
 		int num=(int)(Math.random()*90000)+10000;
-		String content="ÀÎÁõ¹øÈ£:"+num;
+		String content="ì¸ì¦ë²ˆí˜¸:"+num;
 		
 		
-		Properties p = new Properties(); // Á¤º¸¸¦ ´ãÀ» °´Ã¼
+		Properties p = new Properties(); // ì •ë³´ë¥¼ ë‹´ì„ ê°ì²´
 		p.put("mail.smtp.host","smtp.naver.com");
 		p.put("mail.smtp.port", "465");
 		p.put("mail.smtp.starttls.enable", "true");
@@ -123,9 +123,9 @@ public class InfoController {
 	    Session ses = Session.getInstance(p, auth);
 	      
 	    ses.setDebug(true);
-	    MimeMessage msg = new MimeMessage(ses); // ¸ŞÀÏÀÇ ³»¿ëÀ» ´ãÀ» °´Ã¼ 
+	    MimeMessage msg = new MimeMessage(ses); // ë©”ì¼ì˜ ë‚´ìš©ì„ ë‹´ì„ ê°ì²´ 
 	 
-	    msg.setSubject(subject); //  Á¦¸ñ
+	    msg.setSubject(subject); //  ì œëª©
 	 
 	    StringBuffer buffer = new StringBuffer();
 	    buffer.append(content);
@@ -133,9 +133,9 @@ public class InfoController {
 	    msg.setFrom(fromAddr); 
 	 
 	    Address toAddr = new InternetAddress(email);
-	    msg.addRecipient(Message.RecipientType.TO, toAddr); // ¹Ş´Â »ç¶÷
-	    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ³»¿ë
-	    Transport.send(msg); // Àü¼Û
+	    msg.addRecipient(Message.RecipientType.TO, toAddr); // ë°›ëŠ” ì‚¬ëŒ
+	    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ë‚´ìš©
+	    Transport.send(msg); // ì „ì†¡
 	    
     	HashMap<String,String> hm=new HashMap<>();
 		hm.put("email",email);
@@ -152,7 +152,7 @@ public class InfoController {
 			
 		 IndexController index=new IndexController();
 		 String city=index.getCity(req.getCookies());
-		 index.getWeather(city, mav, resp); // ³¯¾¾Á¤º¸
+		 index.getWeather(city, mav, resp); // ë‚ ì”¨ì •ë³´
 			
 			HttpSession session=req.getSession();
 			HashMap<String, String> hm=(HashMap<String, String>) session.getAttribute("user");
@@ -190,7 +190,7 @@ public class InfoController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/info_bcheck.do") //¿©±âÇÏ´ÂÁß ¤·¤·
+	@RequestMapping(value="/info_bcheck.do") //ì—¬ê¸°í•˜ëŠ”ì¤‘ ã…‡ã…‡
 	public ModelAndView infoScheduleb(HttpServletRequest req, int pageNum, HttpServletResponse resp) throws UnsupportedEncodingException {
 		ModelAndView mav=new ModelAndView("info/info_bcheck");
 		IndexController index=new IndexController();
@@ -225,7 +225,7 @@ public class InfoController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/info_ccheck.do") //¿©±âÇÏ´ÂÁß ¤·¤·
+	@RequestMapping(value="/info_ccheck.do") //ì—¬ê¸°í•˜ëŠ”ì¤‘ ã…‡ã…‡
 	public ModelAndView infoSchedulec(HttpServletRequest req, int pageNum, HttpServletResponse resp) throws UnsupportedEncodingException {
 		ModelAndView mav=new ModelAndView("info/info_ccheck");
 		IndexController index=new IndexController();
@@ -262,7 +262,7 @@ public class InfoController {
 	
 	
 	
-	@RequestMapping(value="/info_cartlist.do")//¿©±â
+	@RequestMapping(value="/info_cartlist.do")//ì—¬ê¸°
 	public ModelAndView CartList(HttpServletRequest req, int pageNum) {
 		HttpSession session=req.getSession();
 		HashMap<String, String> hm=(HashMap<String, String>) session.getAttribute("user");
@@ -294,9 +294,9 @@ public class InfoController {
 	}
 	
 	
-	@RequestMapping(value = "deleteSchedule.do") // ¿¹¾à »èÁ¦
+	@RequestMapping(value = "deleteSchedule.do") // ì˜ˆì•½ ì‚­ì œ
 	public ModelAndView deleteSchedule(HttpServletRequest req, int num) {
-		System.out.println("µµÂø");
+		System.out.println("ë„ì°©");
 		HttpSession session=req.getSession();
 		HashMap<String, String> hm=(HashMap<String, String>) session.getAttribute("user");
 		String id = "";

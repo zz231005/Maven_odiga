@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="euc-kr"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
     .button_ok {
@@ -41,34 +41,34 @@
 		<form action = "info_nonMember.do" method = "post">
 			<input type = "hidden" name = "pageNum" value = "1">
 			<div style="display: table-cell; padding-right: 8px ">
-				<input name = "name" type="text" value = "${name }" class="w3-input" style="display: table-cell; width: 300px; border: 1px solid #ddd; border-radius:5px; box-shadow: 0px 0px 15px #cacaca;padding: 17px 10px;" placeholder="ÀÌ¸§">
-				<input name = "email" type="text" value = "${email }"  class="w3-input" style="display: table-cell; width: 300px; border: 1px solid #ddd; border-radius:5px; box-shadow: 0px 0px 15px #cacaca; padding: 17px 10px;" placeholder="ÀÌ¸ŞÀÏ">
+				<input name = "name" type="text" value = "${name }" class="w3-input" style="display: table-cell; width: 300px; border: 1px solid #ddd; border-radius:5px; box-shadow: 0px 0px 15px #cacaca;padding: 17px 10px;" placeholder="ì´ë¦„">
+				<input name = "email" type="text" value = "${email }"  class="w3-input" style="display: table-cell; width: 300px; border: 1px solid #ddd; border-radius:5px; box-shadow: 0px 0px 15px #cacaca; padding: 17px 10px;" placeholder="ì´ë©”ì¼">
 			</div>
 			<div  style="display: table-cell; width: 300px; border: 1px solid #ddd; box-shadow: 0px 0px 15px #cacaca; padding: 10px 0; border-radius:5px;">
 				<div style="display: table-cell;">
-					<label>°áÁ¦¹æ½Ä :</label>
+					<label>ê²°ì œë°©ì‹ :</label>
 				</div>
 				<div style="display: table-cell;">
 					<select name = "pay_mode" class="w3-input" style="width: 200px;" >
-						<option value="card" style="padding: 5px;">Ä«µå</option>
+						<option value="card" style="padding: 5px;">ì¹´ë“œ</option>
 						<option value ="deposit"  style="padding: 5px;"
-							<c:if test = "${pay_mode ==  'deposit'}">selected</c:if>>¹«ÅëÀåÀÔ±İ</option>
+							<c:if test = "${pay_mode ==  'deposit'}">selected</c:if>>ë¬´í†µì¥ì…ê¸ˆ</option>
 					</select>
 				</div>
 			</div>
 			<div style="display: table-cell;padding-left: 8px">
-				<input type = "submit" class="button_ok" value ="Á¶È¸ÇÏ±â" style="display: table-cell;">
+				<input type = "submit" class="button_ok" value ="ì¡°íšŒí•˜ê¸°" style="display: table-cell;">
 			</div>
 		</form>
 		<ul class="w3-ul w3-card-4" style="border:1px solid #ddd; margin-top:10px;">
 			<c:forEach var="non_list" items="${non_list}">
 				<li class="w3-bar" style="border-bottom:1px solid #ddd; margin-bottom:5px; text-align: left;">
-					<span onclick="location.href='deleteSchedule.do?num=${non_list.num}&id=${email}'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">¡¿</span>
+					<span onclick="location.href='deleteSchedule.do?num=${non_list.num}&id=${email}'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Ã—</span>
 					<img onclick="location.href='hotel_content.do?num=${non_list.hotelDTO.num}'" src="hotel_img/${non_list.hotelDTO.getOneFilename()}" class="w3-bar-item w3-round w3-hide-small" style="width:200px">
 					<div class="w3-bar-item">
 						<span class="w3-large"><p>${non_list.hotelDTO.name}</p></span>
 						<p>${non_list.hotelDTO.roadaddrpart1}</p>
-						<p>ÆòÁ¡:
+						<p>í‰ì :
 						<c:forEach var = "i" begin="1" end="5">
 							<c:choose>
 								<c:when test="${(non_list.hotelDTO.score / 2) >= i}">
@@ -83,8 +83,8 @@
 							</c:choose>
 						</c:forEach>
 						</p>
-						<p>°¡°İ:${non_list.price}¿ø</p>
-						<p>¿¹¾àÀÏ : ${non_list.startdate} ~ ${non_list.enddate}</p>
+						<p>ê°€ê²©:${non_list.price}ì›</p>
+						<p>ì˜ˆì•½ì¼ : ${non_list.startdate} ~ ${non_list.enddate}</p>
 					</div>
 				</li>
 			</c:forEach>

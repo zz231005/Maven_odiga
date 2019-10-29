@@ -1,7 +1,7 @@
 package com.odiga.controller.member;
 
 import java.util.Properties;
-// ¿©±â±îÁö ÀÌ¸ŞÀÏ import
+// ì—¬ê¸°ê¹Œì§€ ì´ë©”ì¼ import
 
 import javax.mail.Address;
 import javax.mail.Authenticator;
@@ -37,9 +37,9 @@ public class MemberAnoController {
 		ModelAndView mav=new ModelAndView("member/message");
 		String msg, url = "index.do";
 		if(res >0) {
-			msg = "È¸¿ø°¡ÀÔ Ã³¸®°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.";
+			msg = "íšŒì›ê°€ì… ì²˜ë¦¬ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.";
 		}else {
-			msg = "È¸¿ø°¡ÀÔ Ã³¸®°¡ ¿Ï·áµÇÁö ¾Ê¾Ò½À´Ï´Ù. ´Ù½Ã È®ÀÎ ÈÄ ÀÌ¿ëºÎÅ¹µå¸³´Ï´Ù.";
+			msg = "íšŒì›ê°€ì… ì²˜ë¦¬ê°€ ì™„ë£Œë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤. ë‹¤ì‹œ í™•ì¸ í›„ ì´ìš©ë¶€íƒë“œë¦½ë‹ˆë‹¤.";
 		}
 		mav.addObject("msg", msg);
 		mav.addObject("url", url);
@@ -71,13 +71,13 @@ public class MemberAnoController {
 			return "1";
 		}
 		
-		String from="gudwls072@naver.com"; // ÀÌ¸ŞÀÏ º¸³»´Â ÁÖ¼Ò
-		String subject="Odiga ¸ŞÀÏÀÎÁõ ¼­ºñ½ºÀÔ´Ï´Ù."; // Á¦¸ñ
+		String from="gudwls072@naver.com"; // ì´ë©”ì¼ ë³´ë‚´ëŠ” ì£¼ì†Œ
+		String subject="Odiga ë©”ì¼ì¸ì¦ ì„œë¹„ìŠ¤ì…ë‹ˆë‹¤."; // ì œëª©
 		int num=(int)(Math.random()*99999)+10000;
-		String content="ÀÎÁõ¹øÈ£:"+num;
+		String content="ì¸ì¦ë²ˆí˜¸:"+num;
 		
 		
-		Properties p = new Properties(); // Á¤º¸¸¦ ´ãÀ» °´Ã¼
+		Properties p = new Properties(); // ì •ë³´ë¥¼ ë‹´ì„ ê°ì²´
 		p.put("mail.smtp.host","smtp.naver.com");
 		p.put("mail.smtp.port", "465");
 		p.put("mail.smtp.starttls.enable", "true");
@@ -92,9 +92,9 @@ public class MemberAnoController {
 	    Session ses = Session.getInstance(p, auth);
 	      
 	    ses.setDebug(true);
-	    MimeMessage msg = new MimeMessage(ses); // ¸ŞÀÏÀÇ ³»¿ëÀ» ´ãÀ» °´Ã¼ 
+	    MimeMessage msg = new MimeMessage(ses); // ë©”ì¼ì˜ ë‚´ìš©ì„ ë‹´ì„ ê°ì²´ 
 	 
-	    msg.setSubject(subject); //  Á¦¸ñ
+	    msg.setSubject(subject); //  ì œëª©
 	 
 	    StringBuffer buffer = new StringBuffer();
 	    buffer.append(content);
@@ -102,10 +102,10 @@ public class MemberAnoController {
 	    msg.setFrom(fromAddr); 
 	 
 	    Address toAddr = new InternetAddress(email);
-	    msg.addRecipient(Message.RecipientType.TO, toAddr); // ¹Ş´Â »ç¶÷
+	    msg.addRecipient(Message.RecipientType.TO, toAddr); // ë°›ëŠ” ì‚¬ëŒ
 	     
-	    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ³»¿ë
-	    Transport.send(msg); // Àü¼Û
+	    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ë‚´ìš©
+	    Transport.send(msg); // ì „ì†¡
 	    
 		return String.valueOf(num);
 	}

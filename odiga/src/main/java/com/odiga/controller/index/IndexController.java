@@ -31,7 +31,7 @@ import com.odiga.mybatis.member.MemberMapper;
 
 @Controller
 public class IndexController {
-	private static String [] CITY_LIST = {"¼­¿ï","ÀÎÃµ","ÃáÃµ", "Ã»ÁÖ", "´ëÀü", "¾Èµ¿", "ÀüÁÖ", "Æ÷Ç×", "´ë±¸", "¿ï»ê", "ºÎ»ê", "Ã¢¿ø", "¿©¼ö", "±¤ÁÖ", "Á¦ÁÖ"};
+	private static String [] CITY_LIST = {"ì„œìš¸","ì¸ì²œ","ì¶˜ì²œ", "ì²­ì£¼", "ëŒ€ì „", "ì•ˆë™", "ì „ì£¼", "í¬í•­", "ëŒ€êµ¬", "ìš¸ì‚°", "ë¶€ì‚°", "ì°½ì›", "ì—¬ìˆ˜", "ê´‘ì£¼", "ì œì£¼"};
 	@Autowired
 	private MemberMapper memberMapper;
 	
@@ -79,7 +79,7 @@ public class IndexController {
 	
 	public ModelAndView getWeather(String city, ModelAndView mav, HttpServletResponse resp) {
 		if(city.trim().equals("")) {
-			city = "¼­¿ï";
+			city = "ì„œìš¸";
 			resp.addCookie(setCity(city));
 		}
 		HashMap<String, Object> hs = this_weather(city);
@@ -107,49 +107,49 @@ public class IndexController {
 	protected HashMap<String, Object> this_weather(String city) {
 		String city_kr = city;
 		switch(city) {
-		case "¼­¿ï":
+		case "ì„œìš¸":
 			city = "Seoul";
 			break;
-		case "ÀÎÃµ":
+		case "ì¸ì²œ":
 			city = "Incheon";
 			break;
-		case "ÃáÃµ":
+		case "ì¶˜ì²œ":
 			city = "Chuncheon";
 			break;
-		case "Ã»ÁÖ":
+		case "ì²­ì£¼":
 			city = "Cheongju";
 			break;
-		case "´ëÀü":
+		case "ëŒ€ì „":
 			city = "Daejeon";
 			break;
-		case "¾Èµ¿":
+		case "ì•ˆë™":
 			city = "Andong";
 			break;
-		case "ÀüÁÖ":
+		case "ì „ì£¼":
 			city = "Jeonju";
 			break;
-		case "Æ÷Ç×":
+		case "í¬í•­":
 			city = "Pohang";
 			break;
-		case "´ë±¸":
+		case "ëŒ€êµ¬":
 			city = "Daegu";
 			break;
-		case "¿ï»ê":
+		case "ìš¸ì‚°":
 			city = "Ulsan";
 			break;
-		case "ºÎ»ê":
+		case "ë¶€ì‚°":
 			city = "Busan";
 			break;
-		case "Ã¢¿ø":
+		case "ì°½ì›":
 			city = "Changwon";
 			break;
-		case "¿©¼ö":
+		case "ì—¬ìˆ˜":
 			city = "Yeosu";
 			break;
-		case "±¤ÁÖ":
+		case "ê´‘ì£¼":
 			city = "Gwangju";
 			break;
-		case "Á¦ÁÖ":
+		case "ì œì£¼":
 			city = "Jeju";
 			break;
 		}
@@ -163,15 +163,15 @@ public class IndexController {
             String line;
             String result="";
             
-            //³¯¾¾ Á¤º¸
+            //ë‚ ì”¨ ì •ë³´
             bf = new BufferedReader(new InputStreamReader(url.openStream()));
 
-            //¹®ÀÚ¿­ º¯È¯
+            //ë¬¸ìì—´ ë³€í™˜
             while((line=bf.readLine())!=null){
                 result=result.concat(line);
             }
 
-            //¹®ÀÚ¿­À» JSONÀ¸·Î ÆÄ½Ì
+            //ë¬¸ìì—´ì„ JSONìœ¼ë¡œ íŒŒì‹±
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObj = (JSONObject) jsonParser.parse(result);
             
@@ -208,8 +208,8 @@ public class IndexController {
 	      ModelAndView mav = new ModelAndView("odiga/calendar");
 	      Calendar cal = Calendar.getInstance();
 	      cal.set(year, month-1, 1);
-	      int lastday = cal.getActualMaximum(Calendar.DATE); //¸¶Áö¸· ³¯Â¥
-	      int gong = cal.get(Calendar.DAY_OF_WEEK)-1; //°ø¹é
+	      int lastday = cal.getActualMaximum(Calendar.DATE); //ë§ˆì§€ë§‰ ë‚ ì§œ
+	      int gong = cal.get(Calendar.DAY_OF_WEEK)-1; //ê³µë°±
 	      
 	      int last_mon = month-1;
 	      int last_year = year;
@@ -236,8 +236,8 @@ public class IndexController {
 	      ModelAndView mav = new ModelAndView("odiga/calendar");
 	      Calendar cal = Calendar.getInstance();
 	      cal.set(year, month-1, 1);
-	      int lastday = cal.getActualMaximum(Calendar.DATE); //¸¶Áö¸· ³¯Â¥
-	      int gong = cal.get(Calendar.DAY_OF_WEEK)-1; //°ø¹é
+	      int lastday = cal.getActualMaximum(Calendar.DATE); //ë§ˆì§€ë§‰ ë‚ ì§œ
+	      int gong = cal.get(Calendar.DAY_OF_WEEK)-1; //ê³µë°±
 	      
 	      int last_mon = month-1;
 	      int last_year = year;

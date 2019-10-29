@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <style>
 label{
@@ -31,13 +31,13 @@ function input_find_email(){
 
 function find_sendEmail(){
 	if(!find_name.value){
-		document.getElementById("find_name_text").innerHTML = "ÀÌ¸§À» ÀÔ·Â ÇÏ½Ê½Ã¿À.";
+		document.getElementById("find_name_text").innerHTML = "ì´ë¦„ì„ ì…ë ¥ í•˜ì‹­ì‹œì˜¤.";
 		$('.find_name_font').addClass('font_red');
 		$('.find_name_gong').css("padding-top", "5");
 		find_name.focus();
 		return;
 	}else if(!find_email1.value || !find_email2.value){
-		document.getElementById("find_email_text").innerHTML = "ÀÌ¸ŞÀÏÀ» ÀÔ·Â ÇÏ½Ê½Ã¿À.";
+		document.getElementById("find_email_text").innerHTML = "ì´ë©”ì¼ì„ ì…ë ¥ í•˜ì‹­ì‹œì˜¤.";
 		$('.find_email_font').addClass('font_red');
 		$('.find_email_gong').css("padding-top", "5");
 		find_email1.focus();
@@ -52,11 +52,11 @@ function find_sendEmail(){
 			},
 			success: function(data){
 				if(data > 0){
-					alert("ÀÔ·ÂÇÏ½Å E-mail·Î ¾ÆÀÌµğ°¡ Àü¼ÛµÇ¾ú½À´Ï´Ù.\n¸ŞÀÏÀ» È®ÀÎÇÏ½Ã°í ·Î±×ÀÎ ºÎÅ¹µå¸³´Ï´Ù.")
+					alert("ì…ë ¥í•˜ì‹  E-mailë¡œ ì•„ì´ë””ê°€ ì „ì†¡ë˜ì—ˆìŠµë‹ˆë‹¤.\në©”ì¼ì„ í™•ì¸í•˜ì‹œê³  ë¡œê·¸ì¸ ë¶€íƒë“œë¦½ë‹ˆë‹¤.")
 					document.getElementById('login').style.display='block';
 					document.getElementById('id_pwd_find').style.display='none';
 				}else{
-					alert("µî·ÏµÈ Á¤º¸°¡ ¾ø½À´Ï´Ù.")
+					alert("ë“±ë¡ëœ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.")
 					return;
 				}
 			}
@@ -67,11 +67,11 @@ function find_sendEmail(){
 
 
 <div class="w3-container" align="right" style="padding-top: 25px;">
-	<h2>¾ÆÀÌµğ Ã£±â</h2>
+	<h2>ì•„ì´ë”” ì°¾ê¸°</h2>
 </div>
 	<div style="margin-bottom: 20px; margin: 1em;" align = "left" >
 	
-	<label>ÀÌ¸§</label><br>
+	<label>ì´ë¦„</label><br>
 	<input class = "w3-input" style="width: 100%; outline: none;" type = "text" id = "find_name" name = "find_name" onkeyup="input_name_text()">
 	<div class="find_name_gong" style="padding-top: 20px;">
 		<font class="find_name_font" id = "find_name_text"></font>
@@ -83,12 +83,12 @@ function find_sendEmail(){
 		<font style="font-family: inherit; font-size: 17px; color:black;">@</font>
 		<input class="w3-input" style="width: 28%; display: table-cell; outline: none;" type="text" id="find_email2" name="find_email2" readOnly>
 		<select style="width: 28%; display: table-cell; outline: none; height: 49px" class="w3-input" name="find_email3" id="find_email3" onChange="find_email_Check()" >
-			<option value="">¼±ÅÃÇÏ¼¼¿ä</option>
+			<option value="">ì„ íƒí•˜ì„¸ìš”</option>
 			<option value="naver.com">naver.com</option>
 			<option value="hanmail.net">hanmail.net</option>
 			<option value="nate.com">nate.com</option>
 			<option value="gmail.com">gmail.com</option>
-			<option value="0">Á÷Á¢ÀÔ·Â</option>
+			<option value="0">ì§ì ‘ì…ë ¥</option>
 		</select>
 	</div>
 	<div class="find_email_gong" style="padding-top: 20px;">
@@ -96,5 +96,5 @@ function find_sendEmail(){
 	</div>
 </div>
 <div style="margin-top: 35px;" class = "w3-container">
-	<input class="w3-input" type="button" style=" border-radius: 4px;" value="¾ÆÀÌµğ Àü¼Û" onclick="find_sendEmail()">
+	<input class="w3-input" type="button" style=" border-radius: 4px;" value="ì•„ì´ë”” ì „ì†¡" onclick="find_sendEmail()">
 </div>

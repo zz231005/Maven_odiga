@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -185,10 +185,10 @@ function del_commnet_go(num, star_rate){
         },
         success : function(data){
         	if(data == 1){
-	        	alert("»èÁ¦µÇ¾ú½À´Ï´Ù.")
+	        	alert("ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.")
 	        	parent.document.location.reload();
         	}else{
-        		alert("Æä½º¿öµå°¡ Æ²·È½À´Ï´Ù.")
+        		alert("í˜ìŠ¤ì›Œë“œê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.")
         	}
         }
     });
@@ -206,22 +206,22 @@ function edit_comment_go(num){
         },
         success : function(data){
         	if(data == 1){
-	        	alert("¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.")
+	        	alert("ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.")
 	        	document.location.reload();
         	}else{
-        		alert("Æä½º¿öµå°¡ Æ²·È½À´Ï´Ù.")
+        		alert("í˜ìŠ¤ì›Œë“œê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.")
         	}
         }
     });
 }
 
 function edit_comment(num){
-	if($("#edit_lab_"+num).html() == "¼öÁ¤"){
-		if($("#del_lab_"+num).html() == "»èÁ¦Ãë¼Ò"){
-			document.getElementById("del_lab_"+num).innerHTML = "»èÁ¦";
+	if($("#edit_lab_"+num).html() == "ìˆ˜ì •"){
+		if($("#del_lab_"+num).html() == "ì‚­ì œì·¨ì†Œ"){
+			document.getElementById("del_lab_"+num).innerHTML = "ì‚­ì œ";
 			document.getElementById("del_Dropdown_"+num).classList.toggle("show");
 		}
-		document.getElementById("edit_lab_"+num).innerHTML = "¼öÁ¤Ãë¼Ò";
+		document.getElementById("edit_lab_"+num).innerHTML = "ìˆ˜ì •ì·¨ì†Œ";
 		$("#title_edit_"+num).attr("readonly", false);
 		document.getElementById("comments_edit_"+num).style.display='block';
 		document.getElementById("comments_read_"+num).style.display='none';
@@ -233,12 +233,12 @@ function edit_comment(num){
 }
 
 function del_comment(num){
-	if($("#del_lab_"+num).html() == "»èÁ¦"){
-		if($("#edit_lab_"+num).html() == "¼öÁ¤Ãë¼Ò"){
-			document.getElementById("edit_lab_"+num).innerHTML = "¼öÁ¤";
+	if($("#del_lab_"+num).html() == "ì‚­ì œ"){
+		if($("#edit_lab_"+num).html() == "ìˆ˜ì •ì·¨ì†Œ"){
+			document.getElementById("edit_lab_"+num).innerHTML = "ìˆ˜ì •";
 			document.getElementById("edit_Dropdown_"+num).classList.toggle("show");
 		}
-		document.getElementById("del_lab_"+num).innerHTML = "»èÁ¦Ãë¼Ò";
+		document.getElementById("del_lab_"+num).innerHTML = "ì‚­ì œì·¨ì†Œ";
 		document.getElementById("bg_"+num).style.background = '#FFEAEA';
 	}else{
 		document.location.reload();
@@ -266,7 +266,7 @@ function edit_pass(num){
 					<input type="hidden" id = "score"name = "score" value = "true">
 					<input type="hidden" id = "population" name = "population">
 					<input type = "hidden" id = "star_rate" name = "star_rate" value = "1">
-					<div style="width: 800px; height: 230px; border: 2px solid #ddd; border-radius: 7px;  box-shadow: 0 0 10px #8C8C8C;"><!-- ÀÔ·Â -->
+					<div style="width: 800px; height: 230px; border: 2px solid #ddd; border-radius: 7px;  box-shadow: 0 0 10px #8C8C8C;"><!-- ì…ë ¥ -->
 						<div style="margin: 10px 0 0 20px; font-size: 13px;" align = "left">
 							<div style="display: table-cell; padding:0; padding-right: 5px; padding-top:3px;">
 								<i class="material-icons" >person</i>
@@ -280,20 +280,20 @@ function edit_pass(num){
 								</c:if>
 							</div>
 							<div style="display: table-cell; vertical-align: middle;">	
-								<input class="sub_bt" type="button" value="µî·Ï" style="cursor: pointer;" onclick="to_ajax()"/>
+								<input class="sub_bt" type="button" value="ë“±ë¡" style="cursor: pointer;" onclick="to_ajax()"/>
 							</div>
 						</div>
 						<div style="padding: 10px 18px;">
 							<div style="width: 100%; border: 1px solid #ddd; border-left: 0;  border-right: 0; padding: 5px 0;" align="left">
 								<div style="padding: 0 10px;">
 									<div style="padding-right:10px;   display: table-cell; border-right: 1px solid #ddd;" >
-										<label style="font-size: 13px">Á¦¸ñ</label>
+										<label style="font-size: 13px">ì œëª©</label>
 									</div>
 									<div style="display: table-cell;padding-left: 10px;">
 										<input type = "text" name = "title" style="width: 570px;; outline: none; border: none; font-size: 13px">
 									</div>
 									<div  style="padding-right:10px;   display: table-cell; border-right: 1px solid #ddd;">
-										<label style="font-size: 13px">ºñ¹Ğ¹øÈ£</label>
+										<label style="font-size: 13px">ë¹„ë°€ë²ˆí˜¸</label>
 									</div>
 									<div style="display: table-cell; padding-left: 10px;">
 										<input name = "passwd" id = "passwd" type = "password" size="6" maxlength="6"  style="width:50px; outline: none; border: none;">
@@ -302,7 +302,7 @@ function edit_pass(num){
 							</div>
 						</div>
 						<div style="outline: none; margin-left: 1px;">
-							<textarea class = "context" name="comments" rows="5" cols="100" placeholder="100±ÛÀÚ ÀÌ³»·Î ÀÔ·Â ºÎÅ¹ÇÕ´Ï´Ù."></textarea>
+							<textarea class = "context" name="comments" rows="5" cols="100" placeholder="100ê¸€ì ì´ë‚´ë¡œ ì…ë ¥ ë¶€íƒí•©ë‹ˆë‹¤."></textarea>
 						</div>
 							<div class = "rating_div" >
 								<fieldset class="rating">
@@ -318,7 +318,7 @@ function edit_pass(num){
 									<input type="radio" id="1" name="rating" value="half" checked/><label class="half" for="1" id="1"></label>
 								</fieldset>
 								<div style="font-size:12px; color: #A6A6A6; padding-top: 7px; float: left; padding-left: 5px;">
-									º°Á¡Àº ¼öÁ¤ÀÌ ºÒ°¡´É ÇÕ´Ï´Ù.
+									ë³„ì ì€ ìˆ˜ì •ì´ ë¶ˆê°€ëŠ¥ í•©ë‹ˆë‹¤.
 								</div>
 						</div>
 					</div>	
@@ -341,25 +341,25 @@ function edit_pass(num){
 						<div id = "bg_${comment_dto.num }" style="border-bottom: 1px solid #ddd; padding: 10px 0 32px 20px; width: 775px; border-radius: 7px;">
 							<div>
 							<div style="display: table-cell; float:left;">
-								<input  id = "title_edit_${comment_dto.num }" type = "text" value = "${comment_dto.title}" readonly size = "50" style="border:none; outline:none; font-size: 15px; font-weight:bolder; font-family: ³ª´®°íµñ-B; background: none;">
+								<input  id = "title_edit_${comment_dto.num }" type = "text" value = "${comment_dto.title}" readonly size = "50" style="border:none; outline:none; font-size: 15px; font-weight:bolder; font-family: ë‚˜ëˆ”ê³ ë”•-B; background: none;">
 							</div>
 							<c:if test ="${!empty sessionScope.user}">
 								<div style="font-size: 12px; font-weight: bold; display: table-cell; padding-right:15px; padding-top:3px; float:right;">
 									<div class="dropdown"  style="border-right: 1px solid #ddd; display: table-cell; padding-right: 9px;">
-										<label class="del_dropbtn" id = "edit_lab_${comment_dto.num }" style="cursor: pointer;"onclick="edit_comment(${comment_dto.num }), edit_pass(${comment_dto.num })">¼öÁ¤</label>
+										<label class="del_dropbtn" id = "edit_lab_${comment_dto.num }" style="cursor: pointer;"onclick="edit_comment(${comment_dto.num }), edit_pass(${comment_dto.num })">ìˆ˜ì •</label>
 										<div id="edit_Dropdown_${comment_dto.num }"  class="edit_dropdown-content">
 											<div style="margin: 5px 7px;">
 												<input type = "password" id = "edit_passwd_${comment_dto.num }" size ="6" maxlength="6" style="display: table-cell;">
-												<input type = "button" class = "edit_bt" style="display: table-cell;" value ="¼öÁ¤ÇÏ±â" onclick="edit_comment_go(${comment_dto.num  })" >
+												<input type = "button" class = "edit_bt" style="display: table-cell;" value ="ìˆ˜ì •í•˜ê¸°" onclick="edit_comment_go(${comment_dto.num  })" >
 											</div>
 										</div>
 									</div>
 									<div class="dropdown"   style="display: table-cell; padding-left: 8px; ">
-										<label id = "del_lab_${comment_dto.num }" class="del_dropbtn" onclick="del_pass(${comment_dto.num }), del_comment(${comment_dto.num })"  style="cursor: pointer;">»èÁ¦</label>
+										<label id = "del_lab_${comment_dto.num }" class="del_dropbtn" onclick="del_pass(${comment_dto.num }), del_comment(${comment_dto.num })"  style="cursor: pointer;">ì‚­ì œ</label>
 										<div id="del_Dropdown_${comment_dto.num }"  class="del_dropdown-content">
 											<div style="margin: 5px 7px;">
 												<input type = "password" id = "del_passwd_${comment_dto.num }" size ="6" maxlength="6" style="display: table-cell;">
-												<input type = "button" class = "del_bt" style="display: table-cell;" value ="»èÁ¦ÇÏ±â" onclick="del_commnet_go(${comment_dto.num }, ${comment_dto.star_rate  })" >
+												<input type = "button" class = "del_bt" style="display: table-cell;" value ="ì‚­ì œí•˜ê¸°" onclick="del_commnet_go(${comment_dto.num }, ${comment_dto.star_rate  })" >
 											</div>
 										</div>
 									</div>
@@ -374,7 +374,7 @@ function edit_pass(num){
 							<textarea id = "comments_${comment_dto.num }"rows="2" cols="100" style="outline: none;border: none; resize: none;">${comment_dto.comments}</textarea>
 						</div> 
 						<div style="padding:20px 0 20px 20px; font-size: 12px; color: #A6A6A6; float: left; ">
-							ÀÛ¼ºÀÏ:${comment_dto.logtime}
+							ì‘ì„±ì¼:${comment_dto.logtime}
 						</div>
 						<div style="float: right; padding:18px 20px 0 0;">
 							<c:forEach var="j" begin="1" end="5">

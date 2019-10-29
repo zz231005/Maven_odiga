@@ -14,7 +14,7 @@ public class HotelDTO {
 	private String checkin;
 	private String checkout;
 	private String content;
-	private int population; //ÀÎ±¸¼ö
+	private int population; //ì¸êµ¬ìˆ˜
 	
 	
 	public String getContent() {

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -7,21 +7,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
 <div class="w3-container">
-  <h2>³» Âò¸ñ·Ï</h2>
+  <h2>ë‚´ ì°œëª©ë¡</h2>
   <ul class="w3-ul w3-card-4">
   
   	<c:forEach var="cart" items="${cart}">
   	<li class="w3-bar" style="border-bottom:1px solid #ddd; margin-bottom:5px;">
-		<span id="x_bt" onclick="parent.document.location.href='info_deletecart.do?num=${cart.num}'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">¡¿</span>
+		<span id="x_bt" onclick="parent.document.location.href='info_deletecart.do?num=${cart.num}'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Ã—</span>
       	<img src="hotel_img/${cart.hotelDTO.getOneFilename()}" onclick="parent.document.location.href='hotel_content.do?num=${cart.hotelDTO.num}'" class="w3-bar-item w3-round w3-hide-small" style="width:200px">
 		<div class="w3-bar-item">
 			<span class="w3-large"><p>${cart.hotelDTO.name}</p></span>
 			<p>${cart.hotelDTO.roadaddrpart1}</p>
-			<p>ÆòÁ¡:
+			<p>í‰ì :
 			<c:forEach var = "i" begin="1" end="5">
 				<c:choose>
 					<c:when test="${(cart.hotelDTO.score / 2) >= i}">
@@ -36,7 +36,7 @@
 				</c:choose>
 			</c:forEach>
 			</p>
-			<p>°¡°İ:${cart.hotelDTO.price}¿ø</p>
+			<p>ê°€ê²©:${cart.hotelDTO.price}ì›</p>
 		</div>
 	</li>
     </c:forEach>

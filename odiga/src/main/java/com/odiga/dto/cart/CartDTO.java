@@ -33,5 +33,10 @@ public class CartDTO {
 		this.hotelDTO = hotelDTO;
 	}
 	
-	
+	public String toString() {
+		return 
+			"num : " + this.num + "\n" +
+			"hotel_num : " + this.hotel_num + "\n" +
+			"id : " + this.id + "\n";
+	}
 }

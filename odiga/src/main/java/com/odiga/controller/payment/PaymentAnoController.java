@@ -30,7 +30,7 @@ public class PaymentAnoController {
 	private PaymentMapper paymentMapper;
 	@Autowired
 	private MemberMapper memberMapper;
-	private String[] week = {"ÀÏ¿äÀÏ", "¿ù¿äÀÏ", "È­¿äÀÏ", "¼ö¿äÀÏ", "¸ñ¿äÀÏ", "±İ¿äÀÏ" , "Åä¿äÀÏ"};
+	private String[] week = {"ì¼ìš”ì¼", "ì›”ìš”ì¼", "í™”ìš”ì¼", "ìˆ˜ìš”ì¼", "ëª©ìš”ì¼", "ê¸ˆìš”ì¼" , "í† ìš”ì¼"};
 
 	@RequestMapping(value = "/payment_Form.do")
 	public ModelAndView PaymentForm( HttpServletResponse resp,HttpServletRequest req, 

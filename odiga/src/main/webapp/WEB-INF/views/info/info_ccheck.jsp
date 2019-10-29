@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -7,19 +7,19 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
 	<div style="padding-bottom: 20px;">
 		<ul class="w3-ul w3-card-4" style="border:1px solid #ddd; margin-top:10px;">
 			<c:forEach var="c_list" items="${c_list}">
 				<li class="w3-bar" style="border-bottom:1px solid #ddd; margin-bottom:5px;">
-					<span onclick="parent.document.location.href='deleteSchedule.do?num=${c_list.num}'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">¡¿</span>
+					<span onclick="parent.document.location.href='deleteSchedule.do?num=${c_list.num}'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Ã—</span>
 					<img onclick="parent.document.location.href='hotel_content.do?num=${c_list.hotelDTO.num}'" src="hotel_img/${c_list.hotelDTO.getOneFilename()}" class="w3-bar-item w3-round w3-hide-small" style="width:200px">
 					<div class="w3-bar-item">
 						<span class="w3-large"><p>${c_list.hotelDTO.name}</p></span>
 						<p>${c_list.hotelDTO.roadaddrpart1}</p>
-						<p>ÆòÁ¡:
+						<p>í‰ì :
 						<c:forEach var = "i" begin="1" end="5">
 							<c:choose>
 								<c:when test="${(c_list.hotelDTO.score / 2) >= i}">
@@ -34,8 +34,8 @@
 							</c:choose>
 						</c:forEach>
 						</p>
-						<p>°¡°İ:${c_list.price}¿ø</p>
-						<p>¿¹¾àÀÏ : ${c_list.startdate} ~ ${c_list.enddate}</p>
+						<p>ê°€ê²©:${c_list.price}ì›</p>
+						<p>ì˜ˆì•½ì¼ : ${c_list.startdate} ~ ${c_list.enddate}</p>
 					</div>
 				</li>
 			</c:forEach>

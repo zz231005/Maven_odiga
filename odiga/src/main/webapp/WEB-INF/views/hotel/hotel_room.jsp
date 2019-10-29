@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -24,7 +24,7 @@ function myFunction(num) {
 
 function del_hotel(num){
 	if("${sessionScope.user.admin}" == "" || "${sessionScope.user.admin}" == null){
-		alert("°ü¸®ÀÚ °èÁ¤¿ÜÀÇ °èÁ¤Àº »èÁ¦°¡ ºÒ°¡´ÉÇÕ´Ï´Ù.")
+		alert("ê´€ë¦¬ìž ê³„ì •ì™¸ì˜ ê³„ì •ì€ ì‚­ì œê°€ ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤.")
 		return;
 	}
 	location.href = "hotel_delete.do?num="+num;
@@ -101,7 +101,7 @@ function del_hotel(num){
 					<div id="room${j }" class="w3-hide option_${j }">
 						<div style="text-align: left;" class = "div_text">
 							<div style="display: table-cell;" class = "label_text">
-								°´½Ç ÀÌ¸§
+								ê°ì‹¤ ì´ë¦„
 							</div>
 							<div style="display: table-cell;">
 								<input type = "text" name = "room_name_${j}"class="in_hotel_text" size = "30">
@@ -110,68 +110,68 @@ function del_hotel(num){
 						<div style="text-align: left;" >
 							<div class = "div_text">
 								<div style="display: table-cell; " class = "label_text">
-									±âÁØ ÀÎ¿ø
+									ê¸°ì¤€ ì¸ì›
 								</div>
 								<div style="display: table-cell;">
 									<input type = "text" name = "minp_${j}"class="in_hotel_text" size = "10">
 								</div>
 								<div style="display: table-cell;">
-									<label style="font-size: 12px; color:#A6A6A6; padding-left: 5px;">¿ä±Ý±âÁØ ÀÎ¿øÀ» ÀÔ·ÂÇÏ¼¼¿ä.</label>
+									<label style="font-size: 12px; color:#A6A6A6; padding-left: 5px;">ìš”ê¸ˆê¸°ì¤€ ì¸ì›ì„ ìž…ë ¥í•˜ì„¸ìš”.</label>
 								</div>
 							</div>
 							<div class = "div_text">
 								<div style="display: table-cell;" class = "label_text">
-									ÃÖ´ë ÀÎ¿ø
+									ìµœëŒ€ ì¸ì›
 								</div>
 								<div style="display: table-cell;">
 									<input type = "text" name = "maxp_${j}"class="in_hotel_text" size = "10">
 								</div>
 								<div style="display: table-cell;">
-									<label style="font-size: 12px; color:#A6A6A6; padding-left: 5px;">°´½ÇÀÇ ÃÖ´ëÀÎ¿øÀ» ÀÔ·ÂÇÏ¼¼¿ä.</label>
+									<label style="font-size: 12px; color:#A6A6A6; padding-left: 5px;">ê°ì‹¤ì˜ ìµœëŒ€ì¸ì›ì„ ìž…ë ¥í•˜ì„¸ìš”.</label>
 								</div>
 							</div>
 							<div class = "div_text">
 								<div style="display: table-cell;" class = "label_text">
-									·ë ¿É¼Ç
+									ë£¸ ì˜µì…˜
 								</div>
 								<div style="display: table-cell;">
-									<input type="checkbox" name="breakfast_${j}" value="true" />Á¶½ÄÆ÷ÇÔ
+									<input type="checkbox" name="breakfast_${j}" value="true" />ì¡°ì‹í¬í•¨
 									<input type="checkbox" name="wifi_${j}" value="true" />Wifi
-									<input type="checkbox" name="smoking_${j}" value="true" />Èí¿¬°¡´É
-									<input type="checkbox" name="cooking_${j}" value="true" />Ãë»ç °¡´É
+									<input type="checkbox" name="smoking_${j}" value="true" />í¡ì—°ê°€ëŠ¥
+									<input type="checkbox" name="cooking_${j}" value="true" />ì·¨ì‚¬ ê°€ëŠ¥
 								</div>
 							</div>
 						</div>
 						<div>
 							<div class = "div_text">
 								<div style="display: table-cell;" class = "label_text">
-									¸éÀû Å©±â
+									ë©´ì  í¬ê¸°
 								</div>
 								<div style="display: table-cell;">
 									<input type = "text" name = "room_size_${j }"class="in_hotel_text" size = "10">
 								</div>
 								<div style="display: table-cell;">
-									<label style="font-size: 12px; color:#A6A6A6; padding-left: 5px;">°´½ÇÀÇ Å©±â ´ÜÀ§(m©÷)</label>
+									<label style="font-size: 12px; color:#A6A6A6; padding-left: 5px;">ê°ì‹¤ì˜ í¬ê¸° ë‹¨ìœ„(mÂ²)</label>
 								</div>
 							</div>
 						</div>
 						<div>
 							<div class = "div_text">
 								<div style="display: table-cell;" class = "label_text">
-									°¡°Ý
+									ê°€ê²©
 								</div>
 								<div style="display: table-cell;">
 									<input type = "text" name = "price_${j }"class="in_hotel_text" size = "10">
 								</div>
 								<div style="display: table-cell;">
-									<label style="font-size: 12px; color:#A6A6A6; padding-left: 5px;">°¢ °´½ÇÀÇ °¡°Ý</label>
+									<label style="font-size: 12px; color:#A6A6A6; padding-left: 5px;">ê° ê°ì‹¤ì˜ ê°€ê²©</label>
 								</div>
 							</div>
 						</div>
 						<div>
 							<div class = "div_text">
 								<div style="display: table-cell;" class = "label_text" >
-									»çÁø
+									ì‚¬ì§„
 								</div>
 								<div style="display: table-cell;">
 									<input type="file" name="room_img_${j }" multiple>
@@ -186,8 +186,8 @@ function del_hotel(num){
 				</div>
 			</div>
 			<div style="background:#E1F6FA; width: 500px; padding-bottom: 20px;">
-				<button class = "button" type="submit" class = "button_ok" onclick="insertSave()">»óÇ°µî·Ï</button>
-				<button class = "button" type="button" class = "button_ok" onclick="del_hotel('${hotel_num}')">»óÇ°¸ñ·Ï</button>
+				<button class = "button" type="submit" class = "button_ok" onclick="insertSave()">ìƒí’ˆë“±ë¡</button>
+				<button class = "button" type="button" class = "button_ok" onclick="del_hotel('${hotel_num}')">ìƒí’ˆëª©ë¡</button>
 			</div>
 		</form>
 	</div>

@@ -54,13 +54,13 @@ public class HotelAnoController {
 		setImage(req, dto, result);
 		hotelMapper.insertHotel(dto);
 		ModelAndView mav = new ModelAndView("hotel/hotel_room");
-		mav.addObject("hotel_num", dto.getNum()); // insert ÇÑ µÚ num°ªÀ» °¡Á®¿Í¼­ º¸³»ÁØ´Ù.
+		mav.addObject("hotel_num", dto.getNum()); // insert í•œ ë’¤ numê°’ì„ ê°€ì ¸ì™€ì„œ ë³´ë‚´ì¤€ë‹¤.
 		return mav;
 	}
 	
 	protected void setImage(HttpServletRequest req, HotelDTO dto, BindingResult result)throws IOException {
 		MultipartHttpServletRequest mr = (MultipartHttpServletRequest) req;
-		mr.setCharacterEncoding("EUC-KR");
+		//mr.setCharacterEncoding("EUC-KR");
 		List<MultipartFile> fileList = mr.getFiles("filename");
 		
 		if (result.hasErrors() && fileList.isEmpty()) {
@@ -79,7 +79,7 @@ public class HotelAnoController {
 		}
 	} 
 
-	@RequestMapping(value = "/hotel_jusoPopup.do") // µµ·Î¸í
+	@RequestMapping(value = "/hotel_jusoPopup.do") // ë„ë¡œëª…
 	public String JusoForm() {
 		return "hotel/jusoPopup";
 	}
@@ -127,7 +127,7 @@ public class HotelAnoController {
 	      
 	     IndexController index=new IndexController();
 	     String city=index.getCity(req.getCookies());
-	     index.getWeather(city, mav, resp); // ³¯¾¾Á¤º¸
+	     index.getWeather(city, mav, resp); // ë‚ ì”¨ì •ë³´
 	      
 	    
 	      mav.addObject("filenames", filenames);
@@ -135,7 +135,7 @@ public class HotelAnoController {
 	      return mav;
 	   }
 
-	  @RequestMapping(value = "/hotel_cate.do") // Å¸ÀÌÆ²·Î Ã£±â
+	  @RequestMapping(value = "/hotel_cate.do") // íƒ€ì´í‹€ë¡œ ì°¾ê¸°
 	   public ModelAndView hotelCate(String title, HttpServletRequest req, HttpServletResponse resp) throws UnsupportedEncodingException {
 	     ModelAndView mav = new ModelAndView("hotel/hotel_cate");
 	     IndexController index = new IndexController();
@@ -152,10 +152,10 @@ public class HotelAnoController {
 		public ModelAndView hotelDeletePro(HttpServletRequest req, int num) {
 			HotelDTO dto = hotelMapper.getHotel(num);
 			if(!dto.getFilename().trim().equals("")) {
-				HttpSession session = req.getSession();	// ÀÌ¹ÌÁö°æ·Î
-				String upPath = session.getServletContext().getRealPath("/img");	// °æ·Î ÀúÀåÇÏ´Â °÷
+				HttpSession session = req.getSession();	// ì´ë¯¸ì§€ê²½ë¡œ
+				String upPath = session.getServletContext().getRealPath("/img");	// ê²½ë¡œ ì €ì¥í•˜ëŠ” ê³³
 				for(String filename : dto.getFilename().split("//@//")) {
-					File file = new File(upPath, filename); // °æ·Î/ÆÄÀÏÀÌ¸§À» ¾î¶»°Ô ÇÏ°Ú´Ù.
+					File file = new File(upPath, filename); // ê²½ë¡œ/íŒŒì¼ì´ë¦„ì„ ì–´ë–»ê²Œ í•˜ê² ë‹¤.
 					file.delete();
 				}
 			}
